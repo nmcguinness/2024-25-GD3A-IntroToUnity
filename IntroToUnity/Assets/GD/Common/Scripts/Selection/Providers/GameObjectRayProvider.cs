@@ -1,3 +1,4 @@
+using Unity.Android.Types;
 using UnityEngine;
 
 namespace GD.Selection
@@ -7,13 +8,27 @@ namespace GD.Selection
         [SerializeField]
         private GameObject targetObject;
 
-        [ReadOnly]
-        private Ray ray;
+        [Header("Debug Gizmo Properties")]
+        [SerializeField]
+        private Color rayColor = Color.yellow;
+
+        [SerializeField]
+        [Range(0.1f, 100)]
+        private float rayLength = 10;
+
+        [ReadOnly] private Ray ray;
 
         public Ray CreateRay()
         {
             ray = new Ray(targetObject.transform.position, targetObject.transform.forward);
             return ray;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = rayColor;
+            Gizmos.DrawLine(targetObject.transform.position,
+                targetObject.transform.position + targetObject.transform.forward * rayLength);
         }
     }
 }
