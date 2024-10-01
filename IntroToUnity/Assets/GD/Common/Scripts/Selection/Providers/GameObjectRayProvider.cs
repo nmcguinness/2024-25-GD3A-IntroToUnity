@@ -29,6 +29,8 @@ namespace GD.Selection
             Gizmos.color = rayColor;
             Gizmos.DrawLine(targetObject.transform.position,
                 targetObject.transform.position + targetObject.transform.forward * rayLength);
+
+            // Gizmos.DrawWireSphere(targetObject.transform.position, 2);
         }
     }
 }
