@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 733392070}
   - component: {fileID: 733392071}
   - component: {fileID: 733392068}
-  - component: {fileID: 733392067}
+  - component: {fileID: 733392072}
   m_Layer: 0
   m_Name: AdvancedSelectionManager
   m_TagString: Selectable
@@ -672,19 +672,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1710373929}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &733392067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733392065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7260c52e87339924799b20e50a28706e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightMaterial: {fileID: 2100000, guid: c5865e524b0e96b48bd0c9f308f75b12, type: 2}
 --- !u!114 &733392068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,6 +716,19 @@ MonoBehaviour:
   targetObject: {fileID: 1451965179}
   rayColor: {r: 1, g: 0.90560615, b: 0.015686274, a: 1}
   rayLength: 10
+--- !u!114 &733392072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733392065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ef70d16c4403242abdd9c30a077c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 17851d10afaef844b8e2ce2cbd0db041, type: 3}
 --- !u!1 &754461642
 GameObject:
   m_ObjectHideFlags: 0
