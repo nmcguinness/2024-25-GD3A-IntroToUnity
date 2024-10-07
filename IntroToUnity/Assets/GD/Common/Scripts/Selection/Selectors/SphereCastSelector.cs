@@ -1,0 +1,43 @@
+using UnityEngine;
+
+namespace GD.Selection
+{
+    public class SphereCastSelector : BaseCastSelector
+    {
+        [Header("Debug Gizmo Properties")]
+        [SerializeField]
+        [ColorUsage(false)]
+        protected Color sphereColor = Color.yellow;
+
+        [SerializeField]
+        [Range(0.1f, 4)]
+        [Tooltip("Define the sensitivity radius of the sphere to allow selection")]
+        private float sphereRadius = 0.5f;
+
+        [SerializeField]
+        [Range(0, 1)]
+        [Tooltip("Allows the designer to move the sphere along the length of the ray defined by maxDistance")]
+        private float sphereCastPositionAsProportion;
+
+        public override void Check(Ray ray)
+        {
+            selection = null;
+            this.ray = ray; //cache the ref to the ray for use in the gizmo
+
+            if (Physics.SphereCast(ray, sphereRadius, out hitInfo, maxDistance, layerMask.value))
+            {
+                var currentSelection = hitInfo.transform;
+                if (currentSelection.CompareTag(selectableTag))
+                    selection = currentSelection;
+            }
+        }
+
+        // Implement this OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = sphereColor;
+            Vector3 pointOnRay = ray.origin + ray.direction * maxDistance * sphereCastPositionAsProportion;
+            Gizmos.DrawWireSphere(pointOnRay, sphereRadius);
+        }
+    }
+}
