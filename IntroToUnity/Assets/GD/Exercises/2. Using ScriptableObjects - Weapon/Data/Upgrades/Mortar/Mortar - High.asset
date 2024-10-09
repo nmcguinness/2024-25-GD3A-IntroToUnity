@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8525ec0f73ab8224d88449a5812300c2, type: 3}
-  m_Name: Mortar - Range Multiplier - Max Out
+  m_Script: {fileID: 11500000, guid: 7cad2477eb06f2d42a990e15d07f4996, type: 3}
+  m_Name: Mortar - High
   m_EditorClassIdentifier: 
-  description: Max out mortar range - makes it unstoppable!
-  multiplier: 20
+  description: Large range
+  multiplier: 5

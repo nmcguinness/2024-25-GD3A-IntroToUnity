@@ -432,17 +432,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1439311966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 265fec6d07fb97942991dca6be4e1d33, type: 3}
+  m_Script: {fileID: 11500000, guid: 699ef8d6670c16949b47577fe15e790f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clipSize: 100
-  range: 2420
-  rank: 1
+  clipSize: 1
+  range: 13750
+  rank: 5
   isUpgraded: 1
   upgrades:
-  - {fileID: 11400000, guid: ce6b1593379b99347bd2cb23f96609af, type: 2}
-  - {fileID: 11400000, guid: ab7050f49172a1d43a22b1baed77cb07, type: 2}
-  - {fileID: 11400000, guid: 8d65fb3d2cbab4e48b5a34eeec7fe0ec, type: 2}
+  - {fileID: 11400000, guid: c1ac0b333a656174aa709041fa48403f, type: 2}
+  - {fileID: 11400000, guid: 5c53bb564789e3f4997bd61007135b22, type: 2}
+  - {fileID: 11400000, guid: bd0078fe4620da948841b1418061bc8b, type: 2}
+  - {fileID: 11400000, guid: bd0078fe4620da948841b1418061bc8b, type: 2}
+  - {fileID: 11400000, guid: bd0078fe4620da948841b1418061bc8b, type: 2}
+  - {fileID: 11400000, guid: bd0078fe4620da948841b1418061bc8b, type: 2}
+  - {fileID: 11400000, guid: bd0078fe4620da948841b1418061bc8b, type: 2}
 --- !u!1 &1460755411 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2970050067927786693, guid: b002ef934a6c79c43b851fc248684c7a,
