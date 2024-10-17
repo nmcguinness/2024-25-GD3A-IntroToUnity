@@ -10,6 +10,8 @@ namespace GD
         [TextArea(2, 4)]
         public string Description = string.Empty;
 
+        public string author = "Team name here...";
+
         #endregion Fields
 
         #region Core Methods

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 891baf0ba4c569646a3b1841d4cb922d, type: 3}
-  m_Name: OnPlayerDie
+  m_Script: {fileID: 11500000, guid: a7bbec931daf5d44aa384b8b1a746ddf, type: 3}
+  m_Name: OnPlayerHealthChange
   m_EditorClassIdentifier: 
-  Description: Raise this event when player dies!
+  Description: Raised everytime the players health changes by > 10 points
   author: Team name here...
