@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716d2f40f22edb94490486742577e700, type: 3}
+  m_Name: Loot Crate - Medieval - Weapons
+  m_EditorClassIdentifier: 
+  Description: Store all prefabs that the medieval loot crate generates
+  list:
+  - {fileID: 5953393746740529625, guid: 3b1557061c8ec4f4991ffb1798a7c6f1, type: 3}
+  - {fileID: 3022854478819089326, guid: 236a5f36bddca1149b8b2ef373174c4a, type: 3}
+  - {fileID: 2282603997003878875, guid: 4b9d13ef294ef4b498abf6c7bca14421, type: 3}
+  - {fileID: 9171555246094474218, guid: 03111c00b6bca034eae684127447f7e1, type: 3}
+  - {fileID: 2029675492693654239, guid: 8a11c40b28e0a0a4ba29f176fa7fb9cb, type: 3}
+  - {fileID: 2029675492693654239, guid: 8a11c40b28e0a0a4ba29f176fa7fb9cb, type: 3}
+  - {fileID: 2029675492693654239, guid: 8a11c40b28e0a0a4ba29f176fa7fb9cb, type: 3}
+  - {fileID: 2029675492693654239, guid: 8a11c40b28e0a0a4ba29f176fa7fb9cb, type: 3}
+  - {fileID: 2029675492693654239, guid: 8a11c40b28e0a0a4ba29f176fa7fb9cb, type: 3}
+  - {fileID: 2029675492693654239, guid: 8a11c40b28e0a0a4ba29f176fa7fb9cb, type: 3}

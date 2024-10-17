@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d2a80a5beeeef194aaefd34f8b66cd0a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 216486
+  packageName: LOWPOLY - Weapon Pack
+  packageVersion: 1.0
+  assetPath: Assets/IVT_LowPoly_Weapon/Animation/Main Camera Anim.controller
+  uploadId: 488744

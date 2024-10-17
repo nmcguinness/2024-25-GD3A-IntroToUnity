@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6600491582177790487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6605246981957875943}
+  - component: {fileID: 6601846056301623316}
+  m_Layer: 0
+  m_Name: Example Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6605246981957875943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6600491582177790487}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7465456, y: 3.0815458, z: -1.1368312}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6601846056301623316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6600491582177790487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09aa9d425b08f7b42a4b2979d313bfcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPosition: {x: 20, y: 20}
+  textOffset: {x: 0, y: 20}
+  prompts:
+  - text: 'Example: Add a CharacterController and Cinemachine to a capsule and collect
+      pickups'
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 14
+    isBold: 1
+    isItalic: 0
+    dimensions: {x: 97.42857, y: 14.571428}
+  - text: '- Usage: Move [WASD], Camera [Mouse]'
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 12
+    isBold: 0
+    isItalic: 0
+    dimensions: {x: 246, y: 14.571428}
+  - text: '- Keywords: PickupGameEvent, CharacterController, Cinemachine'
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 12
+    isBold: 0
+    isItalic: 0
+    dimensions: {x: 254.85715, y: 14.571428}
+  enableGlobalFontScaling: 0
+  globalScalePercentage: 100
