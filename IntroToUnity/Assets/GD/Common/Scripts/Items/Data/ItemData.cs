@@ -9,22 +9,32 @@ namespace GD.Items
     {
         #region Fields
 
+        [FoldoutGroup("Type & Category", expanded: true)]
         [SerializeField]
         [EnumToggleButtons]
         [Tooltip("The category of item")]
         private ItemCategoryType itemCategory = ItemCategoryType.Consumable;
 
+        [FoldoutGroup("Type & Category")]
         [SerializeField, EnumPaging]
         [Tooltip("The type of item")]
         private ItemType itemType = ItemType.Resource;
 
-        [Header("UI & Sound")]
+        [FoldoutGroup("UI & Sound", expanded: true)]
         [SerializeField]
         [PreviewField(100, ObjectFieldAlignment.Left)]
+        [Tooltip("The sprite that represents this item in the UI")]
         private Sprite uiIcon;
 
+        [FoldoutGroup("UI & Sound", expanded: true)]
         [SerializeField]
+        [Tooltip("The audio clip that represents this item")]
         private AudioClip audioClip;
+
+        [FoldoutGroup("UI & Sound")]
+        [SerializeField]
+        [Tooltip("The position of the audio source that plays the audio clip")]
+        private Vector3 audioPosition;
 
         #endregion Fields
 
@@ -35,6 +45,7 @@ namespace GD.Items
 
         public Sprite UiIcon { get => uiIcon; set => uiIcon = value; }
         public AudioClip AudioClip { get => audioClip; set => audioClip = value; }
+        public Vector3 AudioPosition { get => audioPosition; set => audioPosition = value; }
 
         #endregion Properties
     }
