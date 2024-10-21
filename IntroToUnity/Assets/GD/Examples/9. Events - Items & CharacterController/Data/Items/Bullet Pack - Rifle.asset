@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7958b19d7618a5439ac8bb6bf1983a6, type: 3}
-  m_Name: Heart of Glass
+  m_Name: Bullet Pack - Rifle
   m_EditorClassIdentifier: 
-  name: Heart of Glass
+  name: 10x Rifle Bullet Pack
   description: 
-  itemCategory: 0
-  itemType: 1
-  uiIcon: {fileID: 3092137649294962464, guid: 006f7f82ca50d224a993a4ca8304ad81, type: 3}
-  audioClip: {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
+  itemCategory: 3
+  itemType: 4
+  uiIcon: {fileID: 5442340083589169892, guid: 006f7f82ca50d224a993a4ca8304ad81, type: 3}
+  audioClip: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}

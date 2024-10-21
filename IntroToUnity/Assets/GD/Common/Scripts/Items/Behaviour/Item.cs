@@ -36,7 +36,10 @@ namespace GD.Items
         {
             if (targetLayer.OnLayer(other.gameObject))
             {
-                Debug.Log("Item picked up: " + itemData.name);
+                onItemEvent?.Raise(itemData);
+                Destroy(gameObject);
+                //if(onItemEvent != null)
+                //   onItemEvent.Raise(itemData);
             }
         }
     }

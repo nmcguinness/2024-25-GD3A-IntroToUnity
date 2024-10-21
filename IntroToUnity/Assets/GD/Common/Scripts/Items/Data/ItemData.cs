@@ -1,4 +1,5 @@
 ﻿using GD.Types;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace GD.Items
@@ -9,15 +10,17 @@ namespace GD.Items
         #region Fields
 
         [SerializeField]
+        [EnumToggleButtons]
         [Tooltip("The category of item")]
         private ItemCategoryType itemCategory = ItemCategoryType.Consumable;
 
-        [SerializeField]
+        [SerializeField, EnumPaging]
         [Tooltip("The type of item")]
         private ItemType itemType = ItemType.Resource;
 
         [Header("UI & Sound")]
         [SerializeField]
+        [PreviewField(100, ObjectFieldAlignment.Left)]
         private Sprite uiIcon;
 
         [SerializeField]
