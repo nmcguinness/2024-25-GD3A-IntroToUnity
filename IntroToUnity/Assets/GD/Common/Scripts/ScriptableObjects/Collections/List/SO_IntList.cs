@@ -7,7 +7,7 @@
 namespace GD.Collections
 {
     [System.Serializable]
-    [CreateAssetMenu(fileName = "RuntimeIntList", menuName = "GD/SO/Types/Collections/List/Int", order = 2)]
+    [CreateAssetMenu(fileName = "RuntimeIntList", menuName = "GD/Types/Collections/List/Int", order = 2)]
     public class SO_IntList : SO_List<int>
     {
     }

@@ -6,22 +6,40 @@ namespace GD
     {
         #region Fields
 
+        [Header("General Info")]
+        [ContextMenuItem("Reset Name", "ResetName")]
+        [SerializeField]
+        private new string name = string.Empty;
+
         [ContextMenuItem("Reset Description", "ResetDescription")]
         [TextArea(2, 4)]
-        public string Description = string.Empty;
-
-        public string author = "Team name here...";
+        private string description = string.Empty;
 
         #endregion Fields
+
+        #region Properties
+
+        public string Name { get => name; set => name = value; }
+        public string Description { get => description; set => description = value; }
+
+        #endregion Properties
 
         #region Core Methods
 
         /// <summary>
-        /// Resets the description...obviously
+        /// Resets the name to an empty string
         /// </summary>
         public void ResetName()
         {
-            Description = "";
+            Name = string.Empty;
+        }
+
+        /// <summary>
+        /// Resets the description to an empty string
+        /// </summary>
+        public void ResetDescription()
+        {
+            Description = string.Empty;
         }
 
         /// <summary>

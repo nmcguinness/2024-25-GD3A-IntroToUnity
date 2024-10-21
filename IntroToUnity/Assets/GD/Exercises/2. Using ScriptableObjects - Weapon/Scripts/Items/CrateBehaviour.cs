@@ -1,4 +1,3 @@
-using GD.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,13 +7,10 @@ public class CrateBehaviour : MonoBehaviour
     [Tooltip("The transform where the item will be spawned")]
     private Transform spawnTransform;
 
-    //[SerializeField]
-    //[Tooltip("A list of ScriptableObjects that implement IInstantiatePrefab")]
-    //[RequireInterface(typeof(IInstantiatePrefab))]
-    //private List<ScriptableObject> items;
-
     [SerializeField]
-    private SO_GameObjectList archetypes;
+    [Tooltip("A list of ScriptableObjects that implement IInstantiatePrefab")]
+    [RequireInterface(typeof(IInstantiatePrefab))]
+    private List<ScriptableObject> items;
 
     private void Awake()
     {
@@ -26,16 +22,16 @@ public class CrateBehaviour : MonoBehaviour
     [ContextMenu("Generate Crate Item")]
     public void GenerateCrateItem()
     {
-        //count how many archetypes are in the list
-        int countItems = archetypes.Count();
+        //generate a random item from the items
+        var index = Random.Range(0, items.Count);
 
-        //get index of random game object
-        var index = Random.Range(0, countItems);
+        //obtain a reference to the generator
+        var generator = items[index] as IInstantiatePrefab;
 
-        //get an archetype at the index
-        var gameObject = archetypes[index];
+        var newItem = generator.Instantiate(spawnTransform);
 
-        //add to the game by instantiating the prefab
-        Instantiate(gameObject, spawnTransform);
+        //apply impulse to the item
+
+        //instanciate and output to the ground
     }
 }

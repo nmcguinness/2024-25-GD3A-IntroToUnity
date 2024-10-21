@@ -14,7 +14,7 @@ namespace GD
         private GameEvent Event;
 
         [SerializeField]
-        private UnityEvent Response; //list of functions to call when the event is raised
+        private UnityEvent Response;
 
         private void OnEnable() => Event.RegisterListener(this);
 

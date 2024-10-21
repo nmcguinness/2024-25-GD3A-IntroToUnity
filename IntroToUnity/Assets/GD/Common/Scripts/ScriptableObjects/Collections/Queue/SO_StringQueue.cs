@@ -7,7 +7,7 @@
 namespace GD
 {
     [System.Serializable]
-    [CreateAssetMenu(fileName = "SO_StringQueue", menuName = "GD/SO/Types/Collections/Queue/String", order = 4)]
+    [CreateAssetMenu(fileName = "SO_StringQueue", menuName = "GD/Types/Collections/Queue/String", order = 4)]
     public class SO_StringQueue : SO_Queue<string>
     {
     }

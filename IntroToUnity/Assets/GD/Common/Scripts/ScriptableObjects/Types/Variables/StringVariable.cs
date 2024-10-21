@@ -2,7 +2,7 @@
 
 namespace GD
 {
-    [CreateAssetMenu(fileName = "StringVariable", menuName = "GD/SO/Types/Variables/String", order = 4)]
+    [CreateAssetMenu(fileName = "StringVariable", menuName = "GD/Types/Variables/String", order = 4)]
     public class StringVariable : ScriptableDataType<string>
     {
         public void Add(string a)

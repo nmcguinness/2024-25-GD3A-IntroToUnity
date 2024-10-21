@@ -7,7 +7,7 @@
 namespace GD.Collections
 {
     [System.Serializable]
-    [CreateAssetMenu(fileName = "SO_FloatList", menuName = "GD/SO/Types/Collections/List/Float", order = 3)]
+    [CreateAssetMenu(fileName = "SO_FloatList", menuName = "GD/Types/Collections/List/Float", order = 3)]
     public class SO_FloatList : SO_List<float>
     {
     }

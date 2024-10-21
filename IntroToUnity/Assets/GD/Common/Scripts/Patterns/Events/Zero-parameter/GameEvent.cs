@@ -9,7 +9,7 @@ namespace GD
     /// </summary>
     /// <see cref="https://refactoring.guru/design-patterns/observer"/>
     [CreateAssetMenu(fileName = "GameEvent",
-        menuName = "GD/SO/Events/GameEvent",
+        menuName = "GD/Events/No Params/GameEvent",
         order = 1)]
     public class GameEvent : ScriptableGameObject
     {

@@ -7,7 +7,7 @@
 namespace GD
 {
     [System.Serializable]
-    [CreateAssetMenu(fileName = "SO_FloatQueue", menuName = "GD/SO/Types/Collections/Queue/Float", order = 3)]
+    [CreateAssetMenu(fileName = "SO_FloatQueue", menuName = "GD/Types/Collections/Queue/Float", order = 3)]
     public class SO_FloatQueue : SO_Queue<float>
     {
     }

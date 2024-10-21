@@ -7,7 +7,7 @@
 namespace GD.Collections
 {
     [System.Serializable]
-    [CreateAssetMenu(fileName = "SO_StringList", menuName = "GD/SO/Types/Collections/List/String", order = 4)]
+    [CreateAssetMenu(fileName = "SO_StringList", menuName = "GD/Types/Collections/List/String", order = 4)]
     public class SO_StringList : SO_List<string>
     {
     }

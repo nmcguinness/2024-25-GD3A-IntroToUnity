@@ -7,7 +7,7 @@
 namespace GD.Collections
 {
     [System.Serializable]
-    [CreateAssetMenu(fileName = "SO_GameObjectList", menuName = "GD/SO/Types/Collections/List/Game Object", order = 7)]
+    [CreateAssetMenu(fileName = "SO_GameObjectList", menuName = "GD/Types/Collections/List/Game Object", order = 7)]
     public class SO_GameObjectList : SO_List<GameObject>
     {
     }

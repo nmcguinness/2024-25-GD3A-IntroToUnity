@@ -1,8 +1,7 @@
-﻿
-/// <summary>
+﻿/// <summary>
 /// Used by ScriptableObjects that modify a weapon
 /// </summary>
 public interface IModifyWeapon
 {
-    void Apply(WeaponBehaviour w);
+    void Apply(WeaponData w);
 }

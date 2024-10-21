@@ -13,7 +13,7 @@ public class HealthChangeSender : MonoBehaviour
     [SerializeField]
     [Range(0.25f, 10)]
     [Tooltip("Time between health change events in seconds.")]
-    private float timeBetweenChangesSecs = 5;
+    private float timeBetweenChangesSecs = 2;
 
     //Track time since last health change event.
     private float timeSinceLastChangeSecs = 0;

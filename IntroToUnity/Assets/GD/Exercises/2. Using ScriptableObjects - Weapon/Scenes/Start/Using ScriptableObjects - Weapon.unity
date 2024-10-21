@@ -248,14 +248,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2970050067927786693, guid: b002ef934a6c79c43b851fc248684c7a,
         type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000,
-        type: 0}
-    - target: {fileID: 2970050067927786693, guid: b002ef934a6c79c43b851fc248684c7a,
-        type: 3}
       propertyPath: m_Name
-      value: Loot Crate
+      value: Kit Generator
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -491,7 +485,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

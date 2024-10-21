@@ -7,7 +7,7 @@
 namespace GD.Collections
 {
     [System.Serializable]
-    [CreateAssetMenu(fileName = "SO_BoolList", menuName = "GD/SO/Types/Collections/List/Bool", order = 1)]
+    [CreateAssetMenu(fileName = "SO_BoolList", menuName = "GD/Types/Collections/List/Bool", order = 1)]
     public class SO_BoolList : SO_List<bool>
     {
     }
