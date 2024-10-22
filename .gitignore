@@ -5,6 +5,8 @@
 
 # Lecturer distributed plugins - see email with license from lecturer
 **/[Aa]ssets/Plugins/Sirenix/*
+**/[Aa]ssets/Plugins/Demigiant/*
+
 
 **/[Ll]ibrary/
 **/[Tt]emp/
@@ -56,8 +58,7 @@ ExportedObj/
 **/*.pdb.meta
 **/*.mdb.meta
 **/*.cs.meta
-**/*.asset.meta
-**/*.mat.meta
+
 
 # Unity3D generated file on crash reports
 sysinfo.txt
