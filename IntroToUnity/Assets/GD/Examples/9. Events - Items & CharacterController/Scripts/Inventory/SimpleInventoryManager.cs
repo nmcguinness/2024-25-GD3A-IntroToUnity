@@ -1,10 +1,12 @@
+using GD;
 using GD.Items;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SimpleInventoryManager : MonoBehaviour
 {
     [SerializeField]
-    private SimpleInventory inventory;
+    private InventoryCollection inventoryCollection;
 
     /// <summary>
     /// Adds the item to the inventory.
@@ -12,6 +14,6 @@ public class SimpleInventoryManager : MonoBehaviour
     /// <param name="data"></param>
     public void OnInteractablePickup(ItemData data)
     {
-        inventory.Add(data, 1);
+        inventoryCollection.Add(data);
     }
 }

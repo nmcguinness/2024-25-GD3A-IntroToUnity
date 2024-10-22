@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7958b19d7618a5439ac8bb6bf1983a6, type: 3}
-  m_Name: Heart of Glass
+  m_Name: Map - Springfield Uranium Mine
   m_EditorClassIdentifier: 
-  name: Heart of Glass
+  name: 
   description: 
   itemCategory: 0
-  itemType: 1
-  uiIcon: {fileID: 3092137649294962464, guid: 006f7f82ca50d224a993a4ca8304ad81, type: 3}
-  audioClip: {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
-  audioPosition: {x: -10.726624, y: 1.0443296, z: -3.202219}
+  itemType: 23
+  uiIcon: {fileID: 0}
+  audioClip: {fileID: 0}
+  audioPosition: {x: 0, y: 0, z: 0}
