@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7958b19d7618a5439ac8bb6bf1983a6, type: 3}
   m_Name: Rancid Cheese
   m_EditorClassIdentifier: 
-  name: Stale bread
+  name: Rancid Cheese
   description: Ah, three day old bread! I could eat it but it might give me the....
   itemCategory: 0
   itemType: 1

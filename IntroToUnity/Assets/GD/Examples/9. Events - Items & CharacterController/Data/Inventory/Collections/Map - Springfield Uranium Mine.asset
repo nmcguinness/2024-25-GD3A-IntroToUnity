@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7958b19d7618a5439ac8bb6bf1983a6, type: 3}
   m_Name: Map - Springfield Uranium Mine
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  itemCategory: 0
-  itemType: 23
+  name: Springfield Uranium Mine
+  description: An old ragged map, half torn, looks like it might lead to something
+    explosive!
+  itemCategory: 5
+  itemType: 14
   uiIcon: {fileID: 0}
   audioClip: {fileID: 0}
   audioPosition: {x: 0, y: 0, z: 0}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 10x Rifle Bullet Pack
   description: 
-  itemCategory: 0
+  itemCategory: 3
   itemType: 7
   uiIcon: {fileID: 5442340083589169892, guid: 006f7f82ca50d224a993a4ca8304ad81, type: 3}
   audioClip: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
