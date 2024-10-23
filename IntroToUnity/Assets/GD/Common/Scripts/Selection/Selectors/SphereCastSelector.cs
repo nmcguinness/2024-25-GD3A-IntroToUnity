@@ -2,6 +2,11 @@ using UnityEngine;
 
 namespace GD.Selection
 {
+    /// <summary>
+    /// Casts a ray with a sphere that moves along the ray to select objects.
+    /// This approach is less sensitive than the RayCastSelector as the sphere
+    /// effectively broadens cross sectional area across which the ray operates.
+    /// </summary>
     public class SphereCastSelector : BaseCastSelector
     {
         [Header("Debug Gizmo Properties")]

@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using GD.Events;
+using UnityEngine;
 
 namespace GD.Items
 {
     /// <summary>
     /// Represents an item that can be consumed by a game object on the correct layer
     /// </summary>
+    /// <see cref="ItemData"/>
+    /// <see cref="ItemGameEvent"/>
     public class Item : MonoBehaviour, IConsumable
     {
         [SerializeField]

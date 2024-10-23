@@ -2,6 +2,9 @@
 
 namespace GD
 {
+    /// <summary>
+    /// Provides extension methods for Mathf
+    /// </summary>
     public static class GDMathf
     {
         /// <summary>

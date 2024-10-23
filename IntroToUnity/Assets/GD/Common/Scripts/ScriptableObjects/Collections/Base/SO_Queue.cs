@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using GD.Types;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

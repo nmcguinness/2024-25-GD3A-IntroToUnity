@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 
-namespace GD
+namespace GD.Types
 {
+    /// <summary>
+    /// Variables which supports both local and shared scriptableobject of type int.
+    /// </summary>
     [CreateAssetMenu(fileName = "IntVariable", menuName = "GD/Types/Variables/Int", order = 2)]
     public class IntVariable : ScriptableDataType<int>
     {

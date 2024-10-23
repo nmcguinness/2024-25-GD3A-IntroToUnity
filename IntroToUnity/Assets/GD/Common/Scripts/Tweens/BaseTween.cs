@@ -1,0 +1,94 @@
+﻿using DG.Tweening;
+using Sirenix.OdinInspector;
+using System;
+using UnityEngine;
+using UnityEngine.Events;
+
+/// <summary>
+/// Base class for all tween movement
+/// </summary>
+public class BaseTween : MonoBehaviour
+{
+    #region Fields - Inspector
+
+    [SerializeField]
+    [Tooltip("Should the tween start on Start()")]
+    private bool isEnabledOnStart = false;
+
+    [TabGroup("Movement & Timing")]
+    [SerializeField]
+    [Range(0.1f, 10f)]
+    [Tooltip("The duration of the tween in seconds")]
+    private float durationSecs = 1;
+
+    [TabGroup("Movement & Timing")]
+    [SerializeField]
+    [Tooltip("The ease function to use for the tween")]
+    private Ease easeFunction = Ease.Linear;
+
+    [TabGroup("Loop Properties")]
+    [SerializeField]
+    [Range(-1, 100)]
+    private int loopCount = 1;
+
+    [TabGroup("Loop Properties")]
+    [SerializeField]
+    [Tooltip("The type of loop to use for the tween")]
+    [HideIf("HideIfLoopCount")]
+    private LoopType loopType = LoopType.Restart;
+
+    [TabGroup("Events")]
+    [SerializeField]
+    [Tooltip("Event to call when the tween has completed")]
+    private UnityEvent onComplete;
+
+    #endregion Fields - Inspector
+
+    #region Fields - Internal
+
+    private Vector3 originalPosition;
+
+    #endregion Fields - Internal
+
+    #region Properties
+
+    public bool IsEnabledOnStart { get => isEnabledOnStart; set => isEnabledOnStart = value; }
+    public float DurationSecs { get => durationSecs; set => durationSecs = value; }
+    public Ease EaseFunction { get => easeFunction; set => easeFunction = value; }
+    public int LoopCount { get => loopCount; set => loopCount = value; }
+    public LoopType LoopType { get => loopType; set => loopType = value; }
+    public UnityEvent OnComplete { get => onComplete; set => onComplete = value; }
+
+    #endregion Properties
+
+    public virtual void Start()
+    {
+        //Start the tween
+        if (IsEnabledOnStart)
+            StartTween();
+    }
+
+    /// <summary>
+    /// Called to start the tween.
+    /// </summary>
+    public virtual void StartTween()
+    {
+    }
+
+    /// <summary>
+    /// Called when the tween is complete, invokes the onComplete event.
+    /// </summary>
+    public virtual void TweenComplete()
+    {
+        OnComplete?.Invoke();
+    }
+
+    /// <summary>
+    /// Hides the loop type if the loop count is 0 or 1.
+    /// </summary>
+    /// <returns></returns>
+    public virtual bool HideIfLoopCount()
+    {
+        return LoopCount == 0 || LoopCount == 1;
+    }
+}

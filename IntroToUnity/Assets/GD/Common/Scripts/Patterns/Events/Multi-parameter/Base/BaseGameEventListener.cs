@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace GD
+namespace GD.Events
 {
-    // Generic listener class that listens for events of type T.
-    // Listens for events raised by BaseGameEvent<T> and responds using UnityEvent<T>.
+    /// <summary>
+    /// Generic listener class that listens for events of type T.
+    /// Listens for events raised by BaseGameEvent<T> and responds using UnityEvent<T>.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <see cref="BaseGameEvent{T}"/>
     public class BaseGameEventListener<T> : MonoBehaviour
     {
         // Description of the listener for easy identification in the Unity Editor.

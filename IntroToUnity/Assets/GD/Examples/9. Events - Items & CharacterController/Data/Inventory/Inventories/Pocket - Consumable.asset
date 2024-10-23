@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afe1d22bdd55b9a4893639f6de660098, type: 3}
-  m_Name: Pocket - Map Collection
+  m_Name: Pocket - Consumable
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: ef9020798f1986b4eb6a0d0ed921407c, type: 2}
+    - {fileID: 11400000, guid: f860d46f53ce9e848a431e9fd0421613, type: 2}
+    - {fileID: 11400000, guid: d993c47452d7d3244b18d93b1857a6e5, type: 2}
+    - {fileID: 11400000, guid: f3e5fd1fe7a7e5c4a90ab941ebaeb602, type: 2}
+    - {fileID: 11400000, guid: ad9bc5ecb92e085489ffb75897d0f97e, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -35,7 +38,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 4
     - Name: 
       Entry: 7
       Data: 
@@ -44,7 +47,43 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
       Data: 1
+    - Name: $v
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 2
+    - Name: $v
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 3
+    - Name: $v
+      Entry: 3
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -55,3 +94,4 @@ MonoBehaviour:
       Entry: 8
       Data: 
   onInventoryChange: {fileID: 11400000, guid: 33666977a1382e34f97bbfaea224ca56, type: 2}
+  onInventoryEmpty: {fileID: 11400000, guid: 0f9656e879c657743a4365682ee9e35c, type: 2}

@@ -1,9 +1,12 @@
 ﻿using GD.Items;
 
-namespace GD
+namespace GD.Events
 {
-    // Concrete implementation of BaseGameEventListener that listens for an integer-based event.
-    // Used to create a listener that can listen for ItemGameEvent events and respond to them.
-    public class InteractableEventListener : BaseGameEventListener<ItemData>
+    /// <summary>
+    /// Concrete implementation of BaseGameEventListener that listens for an integer-based event.
+    /// Used to create a listener that can listen for ItemGameEvent events and respond to them.
+    /// </summary>
+    /// <see cref="ItemGameEvent"/>
+    public class ItemGameEventListener : BaseGameEventListener<ItemData>
     { }
 }

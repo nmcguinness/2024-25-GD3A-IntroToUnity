@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace GD
+namespace GD.Events
 {
+    /// <summary>
+    /// Listens for a zero-parameter game event and invokes a response
+    /// </summary>
+    /// <see cref="GameEvent"/>
     [AddComponentMenu("GD/Events/Game Event Listener")]
     public class GameEventListener : MonoBehaviour
     {

@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace GD.Selection
 {
+    /// <summary>
+    /// Base class for all selection casters that contains the common properties and methods.
+    /// </summary>
     public class BaseCastSelector : MonoBehaviour, ISelector
     {
         [SerializeField]

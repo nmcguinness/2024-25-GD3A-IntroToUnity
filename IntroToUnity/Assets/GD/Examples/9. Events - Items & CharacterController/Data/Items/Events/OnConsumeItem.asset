@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: OnConsumeItem
   m_EditorClassIdentifier: 
   name: Raise this event when item is consumed etc
+  description: An item game event listener on an event manager can that notify interested
+    entities (e.g. AudioManager)

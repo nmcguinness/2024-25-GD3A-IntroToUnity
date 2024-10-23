@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace GD.Selection
 {
+    /// <summary>
+    /// Changes the material of the selected object to a highlight material.
+    /// </summary>
     public class HighlightSelectionResponse : SelectionResponse
     {
         #region Fields

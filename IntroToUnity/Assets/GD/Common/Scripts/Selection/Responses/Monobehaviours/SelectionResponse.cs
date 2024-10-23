@@ -1,8 +1,10 @@
-﻿using GD.Types;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace GD.Selection
 {
+    /// <summary>
+    /// Base class for all selection responses that stores the previously selected object.
+    /// </summary>
     public abstract class SelectionResponse : MonoBehaviour, ISelectionResponse
     {
         #region Fields

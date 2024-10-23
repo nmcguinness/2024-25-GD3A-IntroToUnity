@@ -1,8 +1,13 @@
 ﻿using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace GD
+namespace GD.Types
 {
+    /// <summary>
+    /// Base class for all scriptable objects in the game.
+    /// Adds name, description, and reset functionality.
+    /// </summary>
+    /// <see cref="GD.Items.ItemData"/>
     public class ScriptableGameObject : ScriptableObject
     {
         #region Fields

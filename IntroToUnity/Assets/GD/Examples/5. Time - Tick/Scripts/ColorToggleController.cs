@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using GD.Tick;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace GD.Examples

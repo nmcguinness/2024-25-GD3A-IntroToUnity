@@ -4,6 +4,12 @@ using UnityEngine;
 
 namespace GD.Items
 {
+    /// <summary>
+    /// Stores all data for an item used when the item is consumed or picked up
+    /// </summary>
+    /// <see cref="Item"/>
+    /// <see cref="Inventory"/>
+    /// <see cref="InventoryCollection"/>
     [CreateAssetMenu(fileName = "ItemData", menuName = "GD/Data/Item")]
     public class ItemData : ScriptableGameObject
     {

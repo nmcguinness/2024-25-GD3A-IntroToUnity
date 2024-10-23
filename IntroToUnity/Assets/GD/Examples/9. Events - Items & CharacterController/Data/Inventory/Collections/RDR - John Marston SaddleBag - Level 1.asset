@@ -18,6 +18,7 @@ MonoBehaviour:
     ReferencedUnityObjects:
     - {fileID: 11400000, guid: db572b3944988b442bf2a8806f134f86, type: 2}
     - {fileID: 11400000, guid: 16f8ce133e835204fa11cf3846b7a46d, type: 2}
+    - {fileID: 11400000, guid: 0b466ad18cbcab94fbbec1d2685baea7, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -26,7 +27,7 @@ MonoBehaviour:
     - Name: contents
       Entry: 7
       Data: 0|System.Collections.Generic.Dictionary`2[[GD.Types.ItemCategoryType,
-        Assembly-CSharp],[GD.Inventory, Assembly-CSharp]], mscorlib
+        Assembly-CSharp],[GD.Items.Inventory, Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
       Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[GD.Types.ItemCategoryType,
@@ -42,7 +43,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
@@ -68,8 +69,22 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
+  onCollectionChange: {fileID: 0}
+  onCollectionEmpty: {fileID: 0}

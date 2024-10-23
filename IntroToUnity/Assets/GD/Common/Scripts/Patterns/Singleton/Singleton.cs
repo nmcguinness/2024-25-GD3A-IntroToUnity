@@ -12,6 +12,7 @@ namespace GD
     /// Parent class for all singletons (SelectionManager, InventoryManager, GameManager)
     /// </summary>
     /// <typeparam name="T"></typeparam>
+    /// <see cref="TimeTickSystem"/>
     /// <see cref="https://refactoring.guru/design-patterns/singleton"/>
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {

@@ -1,117 +1,125 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
-namespace GD
+namespace GD.Tick
 {
+    /// <summary>
+    /// A singleton class that creates a time-tick system that sends
+    /// tick pulses every (1x, 2x, 4x, and 8x) multiple of the base tick rate.
+    /// Allows registering and unregistering listeners for different tick rates.
+    /// </summary>
     public class TimeTickSystem : Singleton<TimeTickSystem>
     {
         #region Fields
 
-        private readonly float maxTickInterval = 0.1f;
+        // Base interval for the tick system in seconds. Each tick occurs every 0.1 seconds by default.
+        [SerializeField]
+        private float baseTickIntervalSecs = 0.1f;
 
+        // Enum representing different tick rate multipliers.
         public enum TickRateMultiplierType : sbyte
         {
-            RealTime = 1, HalfTime = 2, QuarterTime = 4, EighthTime = 8
+            RealTime = 1,    // Fires every tick (base rate)
+            HalfTime = 2,    // Fires every 2 ticks
+            QuarterTime = 4, // Fires every 4 ticks
+            EighthTime = 8   // Fires every 8 ticks
         }
 
-        public uint Tick
-        {
-            get
-            {
-                return tick;
-            }
-        }
+        // The current tick count, starting from zero.
+        public uint Tick { get; private set; } = 0;
 
-        private uint tick = 0;
+        // Timer to keep track of the interval between ticks.
         private float tickTimer;
 
-        private UnityEvent OnTick_Resolution_1 = new UnityEvent();
-
-        private UnityEvent OnTick_Resolution_2 = new UnityEvent();
-
-        private UnityEvent OnTick_Resolution_4 = new UnityEvent();
-
-        private UnityEvent OnTick_Resolution_8 = new UnityEvent();
+        // Dictionary holding UnityEvents for each tick rate multiplier type.
+        private Dictionary<TickRateMultiplierType, UnityEvent> tickEvents;
 
         #endregion Fields
 
+        #region Unity Lifecycle
+
+        // Awake is called when the script instance is being loaded.
         private void Awake()
         {
-            if (maxTickInterval <= 0)
-                throw new Exception("Tick System Max Tick Interval must be > 0!");
+            if (baseTickIntervalSecs <= 0)
+                throw new Exception("Tick System Base Tick Interval must be > 0!");
+
+            // Initialize the dictionary to hold UnityEvents for each tick rate multiplier.
+            tickEvents = new Dictionary<TickRateMultiplierType, UnityEvent>
+            {
+                { TickRateMultiplierType.RealTime, new UnityEvent() },
+                { TickRateMultiplierType.HalfTime, new UnityEvent() },
+                { TickRateMultiplierType.QuarterTime, new UnityEvent() },
+                { TickRateMultiplierType.EighthTime, new UnityEvent() }
+            };
         }
 
+        // FixedUpdate is called on a fixed time interval, typically used for physics updates.
         private void FixedUpdate()
         {
+            // Increment the timer by the time elapsed since the last frame.
             tickTimer += Time.deltaTime;
-            if (tickTimer >= maxTickInterval)
+
+            // Check if the timer exceeds the base tick interval.
+            if (tickTimer >= baseTickIntervalSecs)
             {
-                tickTimer -= maxTickInterval;
+                tickTimer -= baseTickIntervalSecs; // Reset the timer.
+                Tick++; // Increment the tick count.
 
-                tick++;
+                // Invoke tick events based on the tick rate multipliers.
+                tickEvents[TickRateMultiplierType.RealTime]?.Invoke();
 
-                OnTick_Resolution_1?.Invoke();
-
-                if (tick % (int)TickRateMultiplierType.HalfTime == 0)
+                if (Tick % (int)TickRateMultiplierType.HalfTime == 0)
                 {
-                    OnTick_Resolution_2?.Invoke();
+                    tickEvents[TickRateMultiplierType.HalfTime]?.Invoke();
 
-                    if (tick % (int)TickRateMultiplierType.QuarterTime == 0)
+                    if (Tick % (int)TickRateMultiplierType.QuarterTime == 0)
                     {
-                        OnTick_Resolution_4?.Invoke();
+                        tickEvents[TickRateMultiplierType.QuarterTime]?.Invoke();
 
-                        if (tick % (int)TickRateMultiplierType.EighthTime == 0)
+                        if (Tick % (int)TickRateMultiplierType.EighthTime == 0)
                         {
-                            OnTick_Resolution_8?.Invoke();
+                            tickEvents[TickRateMultiplierType.EighthTime]?.Invoke();
                         }
                     }
                 }
             }
         }
 
+        #endregion Unity Lifecycle
+
+        #region Public Methods
+
+        /// <summary>
+        /// Registers a listener for the specified tick rate type.
+        /// </summary>
+        /// <param name="tickRateType">The type of tick rate multiplier to listen to.</param>
+        /// <param name="listener">The UnityAction to register.</param>
         public void RegisterListener(TickRateMultiplierType tickRateType, UnityAction listener)
         {
-            switch (tickRateType)
+            // Check if the dictionary contains the requested tick rate type.
+            if (tickEvents.ContainsKey(tickRateType))
             {
-                case TickRateMultiplierType.RealTime:
-                    OnTick_Resolution_1.AddListener(listener);
-                    break;
-
-                case TickRateMultiplierType.HalfTime:
-                    OnTick_Resolution_2.AddListener(listener);
-                    break;
-
-                case TickRateMultiplierType.QuarterTime:
-                    OnTick_Resolution_4.AddListener(listener);
-                    break;
-
-                case TickRateMultiplierType.EighthTime:
-                    OnTick_Resolution_8.AddListener(listener);
-                    break;
+                tickEvents[tickRateType].AddListener(listener);
             }
         }
 
+        /// <summary>
+        /// Unregisters a listener from the specified tick rate type.
+        /// </summary>
+        /// <param name="tickRateType">The type of tick rate multiplier to stop listening to.</param>
+        /// <param name="listener">The UnityAction to unregister.</param>
         public void UnregisterListener(TickRateMultiplierType tickRateType, UnityAction listener)
         {
-            switch (tickRateType)
+            // Check if the dictionary contains the requested tick rate type.
+            if (tickEvents.ContainsKey(tickRateType))
             {
-                case TickRateMultiplierType.RealTime:
-                    OnTick_Resolution_1.RemoveListener(listener);
-                    break;
-
-                case TickRateMultiplierType.HalfTime:
-                    OnTick_Resolution_2.RemoveListener(listener);
-                    break;
-
-                case TickRateMultiplierType.QuarterTime:
-                    OnTick_Resolution_4.RemoveListener(listener);
-                    break;
-
-                case TickRateMultiplierType.EighthTime:
-                    OnTick_Resolution_8.RemoveListener(listener);
-                    break;
+                tickEvents[tickRateType].RemoveListener(listener);
             }
         }
+
+        #endregion Public Methods
     }
 }

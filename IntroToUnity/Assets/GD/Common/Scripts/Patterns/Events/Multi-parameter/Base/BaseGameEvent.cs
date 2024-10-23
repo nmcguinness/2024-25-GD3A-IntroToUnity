@@ -1,10 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using GD.Types;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace GD
+namespace GD.Events
 {
-    // Abstract base class representing a generic game event.
-    // Allows events to carry data of type T to all listeners.
+    /// <summary>
+    /// Abstract base class representing a generic game event.
+    /// Allows events to carry data of type T to all listeners.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class BaseGameEvent<T> : ScriptableGameObject
     {
         // List of listeners that are registered to this event.

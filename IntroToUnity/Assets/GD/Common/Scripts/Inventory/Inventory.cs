@@ -1,43 +1,50 @@
-using GD.Items;
+using GD.Events;
+using GD.Types;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GD
+namespace GD.Items
 {
-    //TODO - Do we want to notify anyone on inventory change?
-
+    /// <summary>
+    /// Stores the amount of each object of type ItemData in the inventory.
+    /// Think of an inventory like a pocket in a larger bag (or InventoryCollection).
+    /// </summary>
+    /// <see cref="ItemData"/>
+    /// <see cref="InventoryCollection"/>
     [CreateAssetMenu(fileName = "Inventory",
         menuName = "GD/Inventory/Inventory")]
     public class Inventory : SerializedScriptableObject
     {
+        #region Fields
+
         [SerializeField]
+        [Tooltip("The items in the inventory and their counts.")]
         private Dictionary<ItemData, int> contents = new Dictionary<ItemData, int>();
 
+        [FoldoutGroup("Events")]
         [SerializeField]
+        [Tooltip("Event to raise when the inventory changes.")]
         private GameEvent onInventoryChange;
 
-        /// <summary>
-        /// Gets the count of the specified item in the inventory.
-        /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
-        public int Count(ItemData item)
+        [FoldoutGroup("Events")]
+        [SerializeField]
+        [Tooltip("Event to raise when the inventory is emptied.")]
+        private GameEvent onInventoryEmpty;
+
+        #endregion Fields
+
+        #region Properties
+
+        public int this[ItemData itemData]
         {
-            if (contents.ContainsKey(item))
-                return contents[item];
-            return 0;
+            get
+            {
+                return contents[itemData];
+            }
         }
 
-        /// <summary>
-        /// Returns true if the inventory contains the specified item.
-        /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
-        public bool Contains(ItemData item)
-        {
-            return contents.ContainsKey(item);
-        }
+        #endregion Properties
 
         /// <summary>
         /// Adds the specified amount of items to the inventory.
@@ -81,12 +88,35 @@ namespace GD
         }
 
         /// <summary>
+        /// Gets the count of the specified item in the inventory.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public int Count(ItemData item)
+        {
+            if (contents.ContainsKey(item))
+                return contents[item];
+            return 0;
+        }
+
+        /// <summary>
+        /// Returns true if the inventory contains the specified item.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public bool Contains(ItemData item)
+        {
+            return contents.ContainsKey(item);
+        }
+
+        /// <summary>
         /// Removes all items from the inventory.
         /// </summary>
         /// <returns></returns>
         public bool Clear()
         {
             contents.Clear();
+            onInventoryEmpty?.Raise();
             return contents.Count == 0;
         }
     }

@@ -2,6 +2,9 @@
 
 namespace GD.Selection
 {
+    /// <summary>
+    /// Provides a ray from the camera to the mouse position.
+    /// </summary>
     public class MouseScreenRayProvider : MonoBehaviour, IRayProvider
     {
         [SerializeField]

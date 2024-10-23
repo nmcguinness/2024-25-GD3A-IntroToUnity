@@ -2,6 +2,9 @@
 
 namespace GD.Selection
 {
+    /// <summary>
+    /// Casts a ray from the camera or game object (based on provider type) and checks for selectable objects.
+    /// </summary>
     public class RayCastSelector : BaseCastSelector
     {
         [Header("Debug Gizmo Properties")]

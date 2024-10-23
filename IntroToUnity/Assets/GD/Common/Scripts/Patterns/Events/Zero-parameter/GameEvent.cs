@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using GD.Types;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace GD
+namespace GD.Events
 {
     /// <summary>
     /// Implements Observer pattern to enable us to notify multiple objects about

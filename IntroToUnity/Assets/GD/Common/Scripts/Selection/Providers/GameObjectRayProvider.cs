@@ -1,8 +1,10 @@
-using Unity.Android.Types;
 using UnityEngine;
 
 namespace GD.Selection
 {
+    /// <summary>
+    /// Provides a ray that originates from a target GameObject.
+    /// </summary>
     public class GameObjectRayProvider : MonoBehaviour, IRayProvider
     {
         [SerializeField]
