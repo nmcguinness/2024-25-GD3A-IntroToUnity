@@ -7,12 +7,20 @@ using UnityEngine;
 /// </summary>
 public class TweenPosition : BaseTween
 {
-    [TabGroup("Movement & Timing")]
+    #region Fields - Inspector
+
+    [TabGroup("Transformation")]
     [SerializeField]
     [Tooltip("The amount to move the object by")]
     private Vector3 positionDelta = Vector3.up;
 
+    #endregion Fields - Inspector
+
+    #region Fields - Internal
+
     private Vector3 originalPosition;
+
+    #endregion Fields - Internal
 
     // Start is called before the first frame update
     public override void Start()

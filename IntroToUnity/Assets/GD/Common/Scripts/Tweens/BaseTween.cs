@@ -15,23 +15,23 @@ public class BaseTween : MonoBehaviour
     [Tooltip("Should the tween start on Start()")]
     private bool isEnabledOnStart = false;
 
-    [TabGroup("Movement & Timing")]
+    [TabGroup("Timing")]
     [SerializeField]
     [Range(0.1f, 10f)]
     [Tooltip("The duration of the tween in seconds")]
     private float durationSecs = 1;
 
-    [TabGroup("Movement & Timing")]
+    [TabGroup("Timing")]
     [SerializeField]
     [Tooltip("The ease function to use for the tween")]
     private Ease easeFunction = Ease.Linear;
 
-    [TabGroup("Loop Properties")]
+    [TabGroup("Loop")]
     [SerializeField]
     [Range(-1, 100)]
     private int loopCount = 1;
 
-    [TabGroup("Loop Properties")]
+    [TabGroup("Loop")]
     [SerializeField]
     [Tooltip("The type of loop to use for the tween")]
     [HideIf("HideIfLoopCount")]
@@ -43,12 +43,6 @@ public class BaseTween : MonoBehaviour
     private UnityEvent onComplete;
 
     #endregion Fields - Inspector
-
-    #region Fields - Internal
-
-    private Vector3 originalPosition;
-
-    #endregion Fields - Internal
 
     #region Properties
 
