@@ -23,6 +23,12 @@ public class BaseTween : MonoBehaviour
 
     [TabGroup("Timing")]
     [SerializeField]
+    [Range(0.1f, 10f)]
+    [Tooltip("The delay before the tween starts in seconds")]
+    private float delaySecs;
+
+    [TabGroup("Timing")]
+    [SerializeField]
     [Tooltip("The ease function to use for the tween")]
     private Ease easeFunction = Ease.Linear;
 
@@ -52,6 +58,7 @@ public class BaseTween : MonoBehaviour
     public int LoopCount { get => loopCount; set => loopCount = value; }
     public LoopType LoopType { get => loopType; set => loopType = value; }
     public UnityEvent OnComplete { get => onComplete; set => onComplete = value; }
+    public float DelaySecs { get => delaySecs; set => delaySecs = value; }
 
     #endregion Properties
 

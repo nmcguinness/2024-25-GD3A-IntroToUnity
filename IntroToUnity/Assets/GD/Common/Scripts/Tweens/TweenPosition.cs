@@ -39,8 +39,17 @@ public class TweenPosition : BaseTween
     {
         //Move the object by the positionDelta over the durationSecs using the easeFunction and the loopCount and loopType
         transform.DOMove(originalPosition + positionDelta, DurationSecs)
-           .SetEase(EaseFunction)
-           .SetLoops(LoopCount, LoopType)
-           .OnComplete(TweenComplete);
+           .SetDelay(DelaySecs) //float
+            .SetEase(EaseFunction)
+                .SetLoops(LoopCount, LoopType)
+                    .OnComplete(TweenComplete);
+    }
+
+    public override void TweenComplete()
+    {
+        //my unique TweenPosition complete code
+
+        //do the common Invoke()
+        base.TweenComplete();
     }
 }
