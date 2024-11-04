@@ -14,11 +14,13 @@ namespace GD.Types
 
         [SerializeField]
         [ContextMenuItem("Reset Name", "ResetName")]
+        [FoldoutGroup("Info", expanded: true)]
         private new string name = string.Empty;
 
         [SerializeField]
         [ContextMenuItem("Reset Description", "ResetDescription")]
         [TextArea(2, 4)]
+        [FoldoutGroup("Info")]
         private string description = string.Empty;
 
         #endregion Fields

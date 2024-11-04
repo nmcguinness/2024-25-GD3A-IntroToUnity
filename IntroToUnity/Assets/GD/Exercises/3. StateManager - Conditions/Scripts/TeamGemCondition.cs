@@ -2,7 +2,7 @@ using GD.State;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "GD/Conditions/Team Gem")]
+[CreateAssetMenu(menuName = "GD/Conditions/Game/Team Gem")]
 public class TeamGemCondition : ConditionBase
 {
     [SerializeField]

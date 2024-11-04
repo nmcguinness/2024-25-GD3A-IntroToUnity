@@ -23,9 +23,9 @@ namespace GD.State
                 if (!condition.Evaluate())
                     allMet = false;
             }
-            if (allMet && timeMet == -1f)
+            if (allMet && TimeMet == -1f)
             {
-                timeMet = Time.timeSinceLevelLoad;
+                TimeMet = Time.timeSinceLevelLoad;
                 OnConditionMet?.Invoke();
             }
             return allMet;

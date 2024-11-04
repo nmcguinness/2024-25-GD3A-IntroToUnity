@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68480c2f5137e0e4199798dd3573abbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winCondition: {fileID: 11400000, guid: 87a3857a16105fc499e6804480c62014, type: 2}
+  winCondition: {fileID: 11400000, guid: 7037132748aa3584488e13f6b7eca435, type: 2}
   loseCondition: {fileID: 11400000, guid: f5d96a2097d38de47a160fb176c449de, type: 2}
 --- !u!1001 &1402827283
 PrefabInstance:
@@ -947,6 +947,9 @@ MonoBehaviour:
   health: 100
   rank: 50
   isHeroObject: 0
+  timeSinceUpdate: 0
+  updateInterval: 5
+  updateRankBy: 20
 --- !u!1 &2114283753834967212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,12 +1150,13 @@ MonoBehaviour:
   startPosition: {x: 20, y: 20}
   textOffset: {x: 0, y: 20}
   prompts:
-  - text: 'Exercise: Add statemanager with conditions'
+  - text: 'Exercise: Add statemanager with conditions (single and composite (e.g.
+      AND, OR, XOR))'
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 14
     isBold: 1
     isItalic: 0
-    dimensions: {x: 251.45, y: 14.53}
+    dimensions: {x: 512.25, y: 14.53}
   - text: '- Usage: Run the game and collect the four bullets'
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 12

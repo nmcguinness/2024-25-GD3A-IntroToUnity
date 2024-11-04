@@ -56,7 +56,7 @@ namespace GD.State
         /// </summary>
         private void HandleWin()
         {
-            Debug.Log($"Player Wins! Win condition met at {winCondition.timeMet} seconds.");
+            Debug.Log($"Player Wins! Win condition met at {winCondition.TimeMet} seconds.");
 
             // Implement win logic here, such as:
             // - Displaying a victory screen
@@ -74,7 +74,7 @@ namespace GD.State
         /// </summary>
         private void HandleLoss()
         {
-            Debug.Log($"Player Loses! Lose condition met at {loseCondition.timeMet} seconds.");
+            Debug.Log($"Player Loses! Lose condition met at {loseCondition.TimeMet} seconds.");
 
             // Implement loss logic here, such as:
             // - Displaying a game over screen

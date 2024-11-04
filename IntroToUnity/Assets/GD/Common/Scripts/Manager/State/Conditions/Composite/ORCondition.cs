@@ -6,7 +6,7 @@ namespace GD.State
     /// <summary>
     /// A composite condition that is met when any child condition is met.
     /// </summary>
-    [CreateAssetMenu(fileName = "AndCondition", menuName = "GD/Conditions/OR Condition")]
+    [CreateAssetMenu(fileName = "AndCondition", menuName = "GD/Conditions/Composite/OR Condition")]
     public class OrCondition : CompositeCondition
     {
         /// <summary>
@@ -22,9 +22,9 @@ namespace GD.State
             {
                 if (condition.Evaluate())
                 {
-                    if (timeMet == -1f)
+                    if (TimeMet == -1f)
                     {
-                        timeMet = Time.timeSinceLevelLoad;
+                        TimeMet = Time.timeSinceLevelLoad;
                         OnConditionMet?.Invoke();
                     }
                     return true;
