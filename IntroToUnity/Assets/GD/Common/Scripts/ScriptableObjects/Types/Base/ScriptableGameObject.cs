@@ -13,12 +13,10 @@ namespace GD.Types
         #region Fields
 
         [SerializeField]
-        [FoldoutGroup("Info", expanded: true)]
         [ContextMenuItem("Reset Name", "ResetName")]
         private new string name = string.Empty;
 
         [SerializeField]
-        [FoldoutGroup("Info")]
         [ContextMenuItem("Reset Description", "ResetDescription")]
         [TextArea(2, 4)]
         private string description = string.Empty;
@@ -28,6 +26,7 @@ namespace GD.Types
         #region Properties
 
         public string Name { get => name; set => name = value; }
+
         public string Description { get => description; set => description = value; }
 
         #endregion Properties
