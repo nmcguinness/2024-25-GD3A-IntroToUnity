@@ -144,6 +144,7 @@ namespace GD.State
         /// <summary>
         /// Resets the condition state.
         /// </summary>
+        [Button("Reset Condition")]
         public virtual void ResetCondition()
         {
             IsMet = false;

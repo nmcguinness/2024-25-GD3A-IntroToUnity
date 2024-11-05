@@ -99,7 +99,13 @@
         /// Weapons used for attacking or defending.
         /// </summary>
         [Description("Items that can be used for attacking or defense")]
-        Weapon
+        Weapon,
+
+        /// <summary>
+        /// Items that are used for navigation or wayfinding.
+        /// </summary>
+        [Description("Items that are used for navigation or wayfinding")]
+        Waypoint
     }
 
     /// <summary>
