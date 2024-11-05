@@ -9,8 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62e60f05373d7924eab358b57369b203, type: 3}
-  m_Name: ItemGameEvent
+  m_Script: {fileID: 11500000, guid: c9e9cf151f0037f4baf2fa36d6bc9435, type: 3}
+  m_Name: Win Condition - Player Hero
   m_EditorClassIdentifier: 
-  name: 
-  description: 
+  name: dgdgdfg
+  description: dfgdfgdfgdfgdfgdfg
+  evaluateStrategy: 1
+  priorityLevel: 5
+  OnConditionMet:
+    m_PersistentCalls:
+      m_Calls: []
+  isMet: 0
+  timeMet: -1

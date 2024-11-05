@@ -16,8 +16,7 @@ namespace GD.Items
         #region Fields
 
         [FoldoutGroup("Type & Category", expanded: true)]
-        [SerializeField]
-        [EnumToggleButtons]
+        [SerializeField, EnumPaging]
         [Tooltip("The category of item")]
         private ItemCategoryType itemCategory = ItemCategoryType.Consumable;
 

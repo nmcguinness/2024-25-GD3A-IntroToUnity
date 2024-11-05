@@ -7,13 +7,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11b114f5696f3624da1271564de6a46b, type: 3}
-  m_Name: Win Condition - Player Rank - Greater 100
+  m_Script: {fileID: 11500000, guid: ec9c6533fc4624b418f933cc98346062, type: 3}
+  m_Name: Wind Condition - AND - Rank and Hero
   m_EditorClassIdentifier: 
-  name: Rank > 100
-  description: Met when player levels up above threshold
+  name: 
+  description: 
   evaluateStrategy: 1
   priorityLevel: 5
   OnConditionMet:
@@ -21,4 +21,6 @@ MonoBehaviour:
       m_Calls: []
   isMet: 0
   timeMet: -1
-  rankThreshold: 200
+  conditions:
+  - {fileID: 11400000, guid: 7037132748aa3584488e13f6b7eca435, type: 2}
+  - {fileID: 11400000, guid: ba89aa6aae3327148ace82d77726fea3, type: 2}

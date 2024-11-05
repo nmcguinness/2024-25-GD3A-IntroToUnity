@@ -1,11 +1,10 @@
-﻿using GD.Types;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public int health = 100;
     public int rank = 50;
-    public bool isHeroObject = false;
+    public bool hasHeroObject = false;
 
     public float timeSinceUpdate = 0f;
     public float updateInterval = 1f;

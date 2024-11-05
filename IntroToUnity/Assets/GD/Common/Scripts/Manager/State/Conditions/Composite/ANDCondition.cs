@@ -5,14 +5,14 @@ namespace GD.State
     /// <summary>
     /// A composite condition that is met when all child conditions are met.
     /// </summary>
-    [CreateAssetMenu(fileName = "AndCondition", menuName = "GD/Conditions/And Condition")]
+    [CreateAssetMenu(fileName = "AndCondition", menuName = "GD/Conditions/Composite/And Condition")]
     public class AndCondition : CompositeCondition
     {
         /// <summary>
         /// Evaluates the condition logic: returns true if all child conditions are met.
         /// </summary>
         /// <returns>True if all child conditions are met; otherwise, false.</returns>
-        protected override bool EvaluateCondition()
+        protected override bool EvaluateCondition(ConditionContext context)
         {
             // Sort conditions by priority before evaluation
             SortConditionsByPriority();
@@ -20,7 +20,7 @@ namespace GD.State
             bool allMet = true;
             foreach (var condition in conditions)
             {
-                if (!condition.Evaluate())
+                if (!condition.Evaluate(context))
                     allMet = false;
             }
             if (allMet && TimeMet == -1f)

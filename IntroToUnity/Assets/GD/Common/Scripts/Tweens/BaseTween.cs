@@ -23,7 +23,7 @@ public class BaseTween : MonoBehaviour
 
     [TabGroup("Timing")]
     [SerializeField]
-    [Range(0.1f, 10f)]
+    [Range(0f, 10f)]
     [Tooltip("The delay before the tween starts in seconds")]
     private float delaySecs;
 
