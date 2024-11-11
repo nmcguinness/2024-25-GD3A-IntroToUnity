@@ -1307,6 +1307,7 @@ MonoBehaviour:
   player: {fileID: 1826292383}
   inventoryCollection: {fileID: 11400000, guid: 1c625224b76d75a418598629203a56c4,
     type: 2}
+  resetConditionsOnStart: 1
   winCondition: {fileID: 11400000, guid: de3140a6889140d40887ffca21440c9d, type: 2}
   loseCondition: {fileID: 11400000, guid: f5d96a2097d38de47a160fb176c449de, type: 2}
 --- !u!1001 &1402827283
@@ -2067,9 +2068,9 @@ MonoBehaviour:
   health: 100
   rank: 50
   hasHeroObject: 0
-  timeSinceUpdate: 0
   updateInterval: 1
   updateRankBy: 10
+  timeSinceUpdate: 0
 --- !u!4 &1826292390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544,

@@ -16,7 +16,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 09ac8c4910a553143b2c7c3f829ae519, type: 2}
+    - {fileID: 11400000, guid: 4fcc95cef86d21b428cbc27a54ba8582, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -44,7 +44,7 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -55,4 +55,4 @@ MonoBehaviour:
       Entry: 8
       Data: 
   onInventoryChange: {fileID: 0}
-  onInventoryEmpty: {fileID: 0}
+  onInventoryClear: {fileID: 0}

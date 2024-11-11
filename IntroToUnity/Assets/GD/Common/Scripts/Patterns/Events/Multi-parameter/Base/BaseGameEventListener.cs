@@ -24,6 +24,12 @@ namespace GD.Events
         [SerializeField]
         private UnityEvent<T> Response;
 
+        private void Awake()
+        {
+            if (Event == null)
+                throw new System.Exception("Game Event is not set in BaseGameEventListener");
+        }
+
         // Register the listener with the event when enabled.
         private void OnEnable() => Event.RegisterListener(this);
 

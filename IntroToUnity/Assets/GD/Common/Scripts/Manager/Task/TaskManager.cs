@@ -1,3 +1,4 @@
+using GD.Items;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,23 +7,53 @@ using UnityEngine;
 namespace GD.Tasks
 {
     /// <summary>
-    /// The TaskManager class is responsible for scheduling and executing GameTask instances.
-    /// It allows you to assign tasks via the Inspector, shows runtime information about active tasks,
-    /// and handles task execution and rescheduling.
+    /// The TaskManager class is responsible for scheduling and executing Task instances.
+    /// It allows you to assign tasks via the Inspector, provides runtime control, and displays
+    /// detailed runtime information about active tasks.
     /// </summary>
     public class TaskManager : MonoBehaviour
     {
-        #region Fields
+        [FoldoutGroup("Context", expanded: true)]
+        [SerializeField]
+        [Tooltip("Player reference to evaluate conditions required by the context")]
+        private Player player;
 
-        [SerializeField, TextArea(2, 4)]
-        private string description = string.Empty;
+        [FoldoutGroup("Context")]
+        [SerializeField]
+        [Tooltip("Player inventory collection to evaluate conditions required by the context")]
+        private InventoryCollection inventoryCollection;
 
-        /// <summary>
-        /// List of GameTasks assigned via the Inspector.
-        /// You can drag and drop GameTask assets into this list.
-        /// </summary>
-        [SerializeField, Tooltip("List of GameTasks to schedule. Drag and drop GameTask assets here.")]
-        private List<Task> taskList = new List<Task>();
+        // Settings foldout group for task configuration
+        [FoldoutGroup("Tasks")]
+        [Tooltip("List of Tasks to schedule at startup. Drag and drop Task assets here.")]
+        public List<Task> taskList = new List<Task>();
+
+        // Runtime Info foldout group for displaying active tasks
+        [FoldoutGroup("Runtime Info"), ShowInInspector, ReadOnly, LabelText("Active Tasks Count")]
+        public int ActiveTasksCount => activeTasks.Count;
+
+        [FoldoutGroup("Runtime Info"), ShowInInspector, ReadOnly]
+        [TableList(IsReadOnly = true, AlwaysExpanded = true)]
+        public List<Task> ActiveTasks => activeTasks;
+
+        [HorizontalGroup("Buttons")]
+        [Button(ButtonSizes.Medium), GUIColor(1f, 0.6f, 0.6f)]
+        [LabelText("Pause Tasks")]
+        private void PauseTasks()
+        {
+            isPaused = true;
+        }
+
+        [HorizontalGroup("Buttons")]
+        [Button(ButtonSizes.Medium), GUIColor(0.6f, 1f, 0.6f)]
+        [LabelText("Resume Tasks")]
+        private void ResumeTasks()
+        {
+            isPaused = false;
+        }
+
+        // Dependency Injection Context
+        private TaskContext taskContext;
 
         // Internal list of instantiated tasks being managed
         private List<Task> activeTasks = new List<Task>();
@@ -36,57 +67,25 @@ namespace GD.Tasks
         // Flag to indicate if the task list has changed (e.g., a new task was added)
         private bool taskListChanged = false;
 
-        #endregion Fields
-
-        #region Properties
-
-        /// <summary>
-        /// Gets the number of active tasks currently managed by the TaskManager.
-        /// </summary>
-        [FoldoutGroup("Runtime Info"), ShowInInspector, ReadOnly, LabelText("Active Tasks Count"), PropertyOrder(1)]
-        public int ActiveTasksCount => activeTasks.Count;
-
-        /// <summary>
-        /// Displays the list of active tasks with their runtime information.
-        /// </summary>
-        [FoldoutGroup("Runtime Info"), ShowInInspector, ReadOnly, PropertyOrder(2)]
-        [TableList(IsReadOnly = true, AlwaysExpanded = true)]
-        public List<Task> ActiveTasks => activeTasks;
-
-        #endregion Properties
+        // Flag to indicate if the task execution is paused
+        private bool isPaused = false;
 
         #region Methods
 
         /// <summary>
-        /// Unity's Start method. Initializes and schedules tasks assigned in the Inspector.
+        /// Creates a TaskManager instance and initializes the TaskContext.
         /// </summary>
         private void Start()
         {
-            // Initialize and add tasks from the Inspector-assigned list
-            foreach (var taskAsset in taskList)
-            {
-                if (taskAsset != null)
-                {
-                    // Instantiate a runtime copy of the task to avoid shared state
-                    Task taskInstance = Instantiate(taskAsset);
-                    taskInstance.ResetTask();
-                    AddTask(taskInstance);
-
-                    // Keep track of active tasks to manage them if needed
-                    activeTasks.Add(taskInstance);
-                }
-            }
+            // Initialize the TaskContext with required dependencies
+            taskContext = new TaskContext(player, inventoryCollection);
         }
 
-        #endregion Methods
-
-        #region Task Management Methods
-
         /// <summary>
-        /// Adds a new GameTask to the manager.
+        /// Adds a new Task to the manager.
         /// Resets the task's execution data and schedules it for execution.
         /// </summary>
-        /// <param name="task">The GameTask to add and schedule.</param>
+        /// <param name="task">The Task to add and schedule.</param>
         public void AddTask(Task task)
         {
             if (task != null)
@@ -114,7 +113,7 @@ namespace GD.Tasks
         /// <summary>
         /// Helper method to add a task to the schedule.
         /// </summary>
-        /// <param name="task">The GameTask to schedule.</param>
+        /// <param name="task">The Task to schedule.</param>
         private void AddTaskToSchedule(Task task)
         {
             if (!tasks.ContainsKey(task.ScheduledTime))
@@ -133,6 +132,12 @@ namespace GD.Tasks
             // Continue running as long as there are tasks in the list
             while (tasks.Count > 0)
             {
+                // Pause handling
+                while (isPaused)
+                {
+                    yield return null;
+                }
+
                 // Reset the task list changed flag
                 taskListChanged = false;
 
@@ -146,6 +151,13 @@ namespace GD.Tasks
                 // Wait until it's time to execute the next task or until the task list changes
                 while (waitTime > 0f && !taskListChanged)
                 {
+                    if (isPaused)
+                    {
+                        // Wait while paused
+                        yield return null;
+                        continue;
+                    }
+
                     // Wait for the next frame
                     yield return null;
 
@@ -162,7 +174,8 @@ namespace GD.Tasks
                 // Execute all tasks scheduled for this time
                 foreach (var task in tasksAtTime)
                 {
-                    task.Execute();
+                    // Pass the context to the task's Execute method
+                    task.Execute(taskContext);
 
                     // Check if the task should be rescheduled
                     if (task.ShouldReschedule())
@@ -191,6 +204,6 @@ namespace GD.Tasks
             taskCoroutine = null;
         }
 
-        #endregion Task Management Methods
+        #endregion Methods
     }
 }

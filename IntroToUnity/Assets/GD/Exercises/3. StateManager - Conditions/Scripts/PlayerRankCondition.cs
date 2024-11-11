@@ -1,3 +1,4 @@
+using GD.Exercises;
 using GD.State;
 using UnityEngine;
 
@@ -7,18 +8,12 @@ public class PlayerRankCondition : ConditionBase
     [SerializeField]
     private int rankThreshold = 1000;
 
-    //private Player player;
-
-    //private void Awake()
-    //{
-    //    player = FindFirstObjectByType<Player>();
-
-    //    if (player == null)
-    //        throw new System.Exception("Player object not found in the scene.");
-    //}
-
-    protected override bool EvaluateCondition(ConditionContext context)
+    protected override bool EvaluateCondition(ConditionContext conditionContext)
     {
-        return context.player.rank >= rankThreshold;
+        // singleton pattern - BAD!!!!
+        // return PlayerSingleton.rank >= rankThreshold;
+
+        // dependency injection - GOOD!!!!
+        return conditionContext.player.rank >= rankThreshold;
     }
 }

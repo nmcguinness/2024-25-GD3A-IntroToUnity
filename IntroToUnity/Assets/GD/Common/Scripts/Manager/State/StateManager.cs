@@ -1,4 +1,5 @@
 using GD.Items;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace GD.State
@@ -8,47 +9,67 @@ namespace GD.State
     /// </summary>
     public class StateManager : MonoBehaviour
     {
+        [FoldoutGroup("Context", expanded: true)]
         [SerializeField]
-        [Tooltip("The player accessed by any condition")]
+        [Tooltip("Player reference to evaluate conditions required by the context")]
         private Player player;
 
+        [FoldoutGroup("Context")]
         [SerializeField]
-        [Tooltip("The inventory accessed by any condition")]
+        [Tooltip("Player inventory collection to evaluate conditions required by the context")]
         private InventoryCollection inventoryCollection;
+
+        [FoldoutGroup("Conditions", expanded: true)]
+        [SerializeField]
+        [Tooltip("Reset conditions on start")]
+        private bool resetConditionsOnStart = true;
 
         /// <summary>
         /// The condition that determines if the player wins.
         /// </summary>
-        public ConditionBase winCondition;
+        [FoldoutGroup("Conditions")]
+        [SerializeField]
+        [Tooltip("The condition that determines if the player wins")]
+        private ConditionBase winCondition;
 
         /// <summary>
         /// The condition that determines if the player loses.
         /// </summary>
-        public ConditionBase loseCondition;
+        [FoldoutGroup("Conditions")]
+        [SerializeField]
+        [Tooltip("The condition that determines if the player loses")]
+        private ConditionBase loseCondition;
 
         /// <summary>
         /// Indicates whether the game has ended.
         /// </summary>
         private bool gameEnded = false;
 
-        private ConditionContext context;
+        private ConditionContext conditionContext;
 
         private void Awake()
         {
-            context = new ConditionContext(player, inventoryCollection);
+            // Wrap the two objects inside the context envelope
+            conditionContext = new ConditionContext(player, inventoryCollection);
+        }
+
+        private void Start()
+        {
+            if (resetConditionsOnStart)
+                ResetConditions();
         }
 
         /// <summary>
         /// Evaluates conditions each frame and handles game state transitions.
         /// </summary>
-        private void Update()
+        private void Update()  //TODO - NMCG : Slow down the update rate to once every 0.5 seconds
         {
             // If the game has already ended, no need to evaluate further
             if (gameEnded)
                 return;
 
             // Evaluate the win condition
-            if (winCondition != null && winCondition.Evaluate(context))
+            if (winCondition != null && winCondition.Evaluate(conditionContext))
             {
                 HandleWin();
                 // Set gameEnded to true to prevent further updates
@@ -57,7 +78,7 @@ namespace GD.State
                 // enabled = false;
             }
             // Evaluate the lose condition only if the win condition is not met
-            else if (loseCondition != null && loseCondition.Evaluate(context))
+            else if (loseCondition != null && loseCondition.Evaluate(conditionContext))
             {
                 HandleLoss();
                 // Set gameEnded to true to prevent further updates
@@ -70,7 +91,7 @@ namespace GD.State
         /// <summary>
         /// Handles the logic when the player wins.
         /// </summary>
-        private void HandleWin()
+        protected virtual void HandleWin()
         {
             Debug.Log($"Player Wins! Win condition met at {winCondition.TimeMet} seconds.");
 
@@ -88,7 +109,7 @@ namespace GD.State
         /// <summary>
         /// Handles the logic when the player loses.
         /// </summary>
-        private void HandleLoss()
+        protected virtual void HandleLoss()
         {
             Debug.Log($"Player Loses! Lose condition met at {loseCondition.TimeMet} seconds.");
 

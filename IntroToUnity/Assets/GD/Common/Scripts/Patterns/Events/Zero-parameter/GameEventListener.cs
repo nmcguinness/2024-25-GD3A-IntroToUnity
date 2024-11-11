@@ -20,6 +20,12 @@ namespace GD.Events
         [SerializeField]
         private UnityEvent Response;
 
+        private void Awake()
+        {
+            if (Event == null)
+                throw new System.Exception("Game Event is not set in GameEventListener");
+        }
+
         private void OnEnable() => Event.RegisterListener(this);
 
         private void OnDisable() => Event.UnregisterListener(this);

@@ -1,6 +1,7 @@
 using GD.Events;
 using GD.Types;
 using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ namespace GD.Items
     /// <see cref="InventoryCollection"/>
     [CreateAssetMenu(fileName = "Inventory",
         menuName = "GD/Inventory/Inventory")]
-    public class Inventory : SerializedScriptableObject
+    public class Inventory : SerializedScriptableObject, IEnumerable<KeyValuePair<ItemData, int>>
     {
         #region Fields
 
@@ -29,8 +30,8 @@ namespace GD.Items
 
         [FoldoutGroup("Events")]
         [SerializeField]
-        [Tooltip("Event to raise when the inventory is emptied.")]
-        private GameEvent onInventoryEmpty;
+        [Tooltip("Event to raise when the inventory is cleared.")]
+        private GameEvent onInventoryClear;
 
         #endregion Fields
 
@@ -116,8 +117,23 @@ namespace GD.Items
         public bool Clear()
         {
             contents.Clear();
-            onInventoryEmpty?.Raise();
+            onInventoryClear?.Raise();
+            onInventoryChange?.Raise();
             return contents.Count == 0;
         }
+
+        #region Methods - IEnumerable Implementation
+
+        public IEnumerator<KeyValuePair<ItemData, int>> GetEnumerator()
+        {
+            return contents.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        #endregion Methods - IEnumerable Implementation
     }
 }

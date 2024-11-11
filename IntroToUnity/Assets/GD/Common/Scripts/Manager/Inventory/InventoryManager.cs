@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace GD.Items
     public class InventoryManager : MonoBehaviour
     {
         [SerializeField]
+        [InlineEditor]
         [Tooltip("The player's inventory collection (e.g. a saddlebag")]
         private InventoryCollection inventoryCollection;
 
@@ -25,7 +27,7 @@ namespace GD.Items
         /// Adds the item to the inventory.
         /// </summary>
         /// <param name="data"></param>
-        public void OnInteractablePickup(ItemData data)
+        public void OnInventoryAdd(ItemData data)
         {
             inventoryCollection.Add(data);
         }
