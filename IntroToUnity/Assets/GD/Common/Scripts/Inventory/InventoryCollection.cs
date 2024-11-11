@@ -49,6 +49,14 @@ namespace GD.Items
 
         #endregion Properties
 
+        public Inventory Get(ItemCategoryType itemCategory)
+        {
+            if (!contents.ContainsKey(itemCategory))
+                throw new NullReferenceException("No inventory for this item category");
+
+            return contents[itemCategory];
+        }
+
         //add a new inventory to the collection
         public void Add(ItemData itemData)
         {

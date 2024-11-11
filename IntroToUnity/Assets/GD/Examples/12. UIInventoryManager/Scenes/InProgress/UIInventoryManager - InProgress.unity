@@ -119,6 +119,108 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &46582760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 46582761}
+  - component: {fileID: 46582764}
+  - component: {fileID: 46582763}
+  - component: {fileID: 46582762}
+  m_Layer: 5
+  m_Name: Panel - Inventory - Waypoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &46582761
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46582760}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1829806419}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 250, y: 110}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &46582762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46582760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 3
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &46582763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46582760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &46582764
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46582760}
+  m_CullTransparentMesh: 1
 --- !u!1 &499735268
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,8 +265,10 @@ GameObject:
   m_Component:
   - component: {fileID: 755566372}
   - component: {fileID: 755566373}
+  - component: {fileID: 755566374}
+  - component: {fileID: 755566375}
   m_Layer: 0
-  m_Name: UIInventoryManager
+  m_Name: UIInventoryManager - Equippables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,6 +306,48 @@ MonoBehaviour:
   itemUIPanel: {fileID: 967902739}
   itemUIPrefab: {fileID: 6945040361095725288, guid: 146e91ac628d2144b9364d8db0c7ec80,
     type: 3}
+--- !u!114 &755566374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755566371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6463213b12eaa4bb00dd00bfd7ad53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyCode: 109
+  panel: {fileID: 967902739}
+  offScreenPosition: {x: -500, y: 0}
+  onScreenPosition: {x: 0, y: 0}
+  slideDuration: 0.5
+  slideInEase: 27
+  slideOutEase: 26
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &755566375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755566371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90122ac295ca9a549bde6d39b2649552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyCode: 109
+  panelCanvasGroup: {fileID: 1829806423}
+  fadeDuration: 0.5
+  fadeInEase: 6
+  fadeOutEase: 5
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &967902738
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +482,7 @@ Transform:
   - {fileID: 1165703650}
   - {fileID: 1849025209}
   - {fileID: 755566372}
+  - {fileID: 1490702622}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1026130371
@@ -476,6 +623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1165703650}
   - component: {fileID: 1165703651}
+  - component: {fileID: 1165703652}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -519,6 +667,35 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: GD.Items.InventoryManager, Assembly-CSharp
         m_MethodName: OnInventoryAdd
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1165703652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165703649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ddd383a0396fc458ffbf018bb57463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Raised when we add/drop equippable things
+  Event: {fileID: 11400000, guid: 187810b244d16344f81e7b634dd988c8, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 755566373}
+        m_TargetAssemblyTypeName: GD.UI.UIInventoryManager, Assembly-CSharp
+        m_MethodName: OnInventoryChange
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -595,6 +772,55 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!1 &1490702621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1490702622}
+  - component: {fileID: 1490702623}
+  m_Layer: 0
+  m_Name: UIInventoryManager - Waypoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1490702622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490702621}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 972849434}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1490702623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490702621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483af4b01bbd4d84796fa972676ea894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Used to represent the items contained in the waypoints inventory
+  inventory: {fileID: 11400000, guid: e69a6a0fa93b1eb41a69bc91085bfed6, type: 2}
+  itemUIPanel: {fileID: 46582761}
+  itemUIPrefab: {fileID: 6945040361095725288, guid: 146e91ac628d2144b9364d8db0c7ec80,
+    type: 3}
 --- !u!1 &1631374137
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +1034,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 967902739}
+  - {fileID: 46582761}
   m_Father: {fileID: 499735269}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -831,7 +1058,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 511
+    m_Bits: 127
 --- !u!114 &1829806421
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -122,6 +122,12 @@ namespace GD.Items
             return contents.Count == 0;
         }
 
+        [ContextMenu("Raise OnChange")]
+        public void RaiseOnChange()
+        {
+            onInventoryChange?.Raise();
+        }
+
         #region Methods - IEnumerable Implementation
 
         public IEnumerator<KeyValuePair<ItemData, int>> GetEnumerator()

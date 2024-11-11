@@ -1,6 +1,8 @@
 using UnityEngine;
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using System;
+using UnityEngine.Events;
 
 namespace GD.UI
 {
@@ -46,6 +48,11 @@ namespace GD.UI
         [Tooltip("Ease type for the slide-out animation, selectable from the Inspector")]
         private Ease slideOutEase = Ease.InBack;
 
+        [TabGroup("Events")]
+        [SerializeField]
+        [Tooltip("Event to call when the tween has completed")]
+        private UnityEvent onComplete;
+
         // Boolean to keep track of the panel's current visibility state
         private bool isVisible = false;
 
@@ -83,9 +90,15 @@ namespace GD.UI
         {
             // Animate the panel's anchored position to the on-screen position with specified easing
             panel.DOAnchorPos(onScreenPosition, slideDuration)
-                .SetEase(slideInEase);
+                .SetEase(slideInEase)
+                .OnComplete(TweenComplete);
 
             //TODO: ALL - Add onComplete, SetDelay, etc. to the tween
+        }
+
+        private void TweenComplete()
+        {
+            onComplete?.Invoke();
         }
 
         // Slides the panel out from the on-screen position to the off-screen position
@@ -93,7 +106,8 @@ namespace GD.UI
         {
             // Animate the panel's anchored position to the off-screen position with specified easing
             panel.DOAnchorPos(offScreenPosition, slideDuration)
-                .SetEase(slideOutEase);
+                .SetEase(slideOutEase)
+             .OnComplete(TweenComplete);
 
             //TODO: ALL - Add onComplete, SetDelay, etc. to the tween
         }

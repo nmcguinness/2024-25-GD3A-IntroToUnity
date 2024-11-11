@@ -71,6 +71,14 @@ namespace GD.UI
             countText.text = count.ToString();
         }
 
+        /// <summary>
+        /// Called when the inventory changes
+        /// </summary>
+        /// We could solve the update problem with
+        /// 1. Update
+        /// 2. HandleTicks
+        /// 3. Persistent polling ("have you changed?")
+        /// 4. Event-driven ("I'll tell you when I change")
         public void OnInventoryChange()
         {
             foreach (var itemEntry in inventory)

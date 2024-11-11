@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using UnityEngine.Events;
 
 namespace GD.UI
 {
@@ -31,6 +32,11 @@ namespace GD.UI
         [SerializeField]
         [Tooltip("Ease type for the fade-out animation")]
         private Ease fadeOutEase = Ease.InQuad;
+
+        [TabGroup("Events")]
+        [SerializeField]
+        [Tooltip("Event to call when the tween has completed")]
+        private UnityEvent onComplete;
 
         // Boolean to keep track of the panel's current visibility state
         private bool isVisible = false;
@@ -65,8 +71,8 @@ namespace GD.UI
         private void FadeIn()
         {
             panelCanvasGroup.DOFade(1, fadeDuration)
-                .SetEase(fadeInEase);
-
+                .SetEase(fadeInEase)
+                     .OnComplete(TweenComplete);
             //TODO: ALL - Add onComplete, SetDelay, etc. to the tween
         }
 
@@ -75,9 +81,15 @@ namespace GD.UI
         private void FadeOut()
         {
             panelCanvasGroup.DOFade(0, fadeDuration)
-                .SetEase(fadeOutEase);
+                .SetEase(fadeOutEase)
+                         .OnComplete(TweenComplete);
 
             //TODO: ALL - Add onComplete, SetDelay, etc. to the tween
+        }
+
+        private void TweenComplete()
+        {
+            onComplete?.Invoke();
         }
     }
 }

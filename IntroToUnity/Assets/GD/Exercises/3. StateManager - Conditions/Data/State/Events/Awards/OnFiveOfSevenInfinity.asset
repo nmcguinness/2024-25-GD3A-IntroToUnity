@@ -9,14 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11b114f5696f3624da1271564de6a46b, type: 3}
-  m_Name: Win Condition - Player Rank - Greater 100
+  m_Script: {fileID: 11500000, guid: 891baf0ba4c569646a3b1841d4cb922d, type: 3}
+  m_Name: OnFiveOfSevenInfinity
   m_EditorClassIdentifier: 
   name: 
   description: 
-  evaluateStrategy: 1
-  priorityLevel: 5
-  OnConditionMet: {fileID: 0}
-  isMet: 0
-  timeMet: -1
-  rankThreshold: 200

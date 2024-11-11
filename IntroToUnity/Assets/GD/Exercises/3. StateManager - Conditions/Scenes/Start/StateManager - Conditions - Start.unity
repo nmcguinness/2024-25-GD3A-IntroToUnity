@@ -1308,8 +1308,10 @@ MonoBehaviour:
   inventoryCollection: {fileID: 11400000, guid: 1c625224b76d75a418598629203a56c4,
     type: 2}
   resetConditionsOnStart: 1
-  winCondition: {fileID: 11400000, guid: de3140a6889140d40887ffca21440c9d, type: 2}
+  winCondition: {fileID: 11400000, guid: 7037132748aa3584488e13f6b7eca435, type: 2}
   loseCondition: {fileID: 11400000, guid: f5d96a2097d38de47a160fb176c449de, type: 2}
+  awardConditions:
+  - {fileID: 11400000, guid: 7299c5bee1b58644eaad1ec5f28379d6, type: 2}
 --- !u!1001 &1402827283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1489,6 +1491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1716382373}
   - component: {fileID: 1716382374}
+  - component: {fileID: 1716382375}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -1540,6 +1543,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1716382375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716382372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ddd383a0396fc458ffbf018bb57463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Listens for when player achieves this specific award
+  Event: {fileID: 11400000, guid: b92c8344f7c845e4ca26f0b43c5eb9ee, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1762682258
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using GD.Items;
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace GD.State
@@ -39,6 +40,10 @@ namespace GD.State
         [SerializeField]
         [Tooltip("The condition that determines if the player loses")]
         private ConditionBase loseCondition;
+
+        [SerializeField]
+        [Tooltip("Set of optional conditions related to awards/quests")]
+        private List<ConditionBase> awardConditions;
 
         /// <summary>
         /// Indicates whether the game has ended.
@@ -85,6 +90,14 @@ namespace GD.State
                 gameEnded = true;
                 // Optionally, disable this component
                 // enabled = false;
+            }
+
+            foreach (var awardCondition in awardConditions)
+            {
+                if (awardCondition != null && awardCondition.Evaluate(conditionContext))
+                {
+                    //do something
+                }
             }
         }
 

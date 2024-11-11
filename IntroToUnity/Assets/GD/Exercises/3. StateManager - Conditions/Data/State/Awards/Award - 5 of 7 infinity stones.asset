@@ -9,14 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11b114f5696f3624da1271564de6a46b, type: 3}
-  m_Name: Win Condition - Player Rank - Greater 100
+  m_Script: {fileID: 11500000, guid: 4c43f6388bf6cf344b9754470e1410b6, type: 3}
+  m_Name: Award - 5 of 7 infinity stones
   m_EditorClassIdentifier: 
   name: 
   description: 
   evaluateStrategy: 1
   priorityLevel: 5
-  OnConditionMet: {fileID: 0}
+  OnConditionMet: {fileID: 11400000, guid: b92c8344f7c845e4ca26f0b43c5eb9ee, type: 2}
   isMet: 0
   timeMet: -1
-  rankThreshold: 200
+  itemCategoryType: 0
+  itemData: {fileID: 11400000, guid: ad9bc5ecb92e085489ffb75897d0f97e, type: 2}
+  itemCount: 5
