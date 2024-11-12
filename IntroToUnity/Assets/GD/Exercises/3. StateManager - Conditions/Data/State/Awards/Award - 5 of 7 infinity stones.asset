@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c43f6388bf6cf344b9754470e1410b6, type: 3}
   m_Name: Award - 5 of 7 infinity stones
   m_EditorClassIdentifier: 
-  name: 
-  description: 
+  name: Talking to the designer
+  description: Some text that might appear in a toast!
   evaluateStrategy: 1
   priorityLevel: 5
   OnConditionMet: {fileID: 11400000, guid: b92c8344f7c845e4ca26f0b43c5eb9ee, type: 2}

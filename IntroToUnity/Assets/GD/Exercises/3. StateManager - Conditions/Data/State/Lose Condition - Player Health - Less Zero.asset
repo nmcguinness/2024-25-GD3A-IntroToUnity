@@ -16,7 +16,7 @@ MonoBehaviour:
   description: 
   evaluateStrategy: 1
   priorityLevel: 3
-  OnConditionMet: {fileID: 0}
+  OnConditionMet: {fileID: 11400000, guid: 001af5aa2e92c174bbbfdc44d0e06507, type: 2}
   isMet: 0
   timeMet: -1
   healthThreshold: 0

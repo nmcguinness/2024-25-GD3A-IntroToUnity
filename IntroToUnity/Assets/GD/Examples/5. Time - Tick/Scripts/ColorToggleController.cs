@@ -7,7 +7,7 @@ namespace GD.Examples
     public class ColorToggleController : MonoBehaviour, IHandleTicks
     {
         [SerializeField]
-        private TimeTickSystem.TickRateMultiplierType tickRateMultiplierType = TimeTickSystem.TickRateMultiplierType.RealTime;
+        private TimeTickSystem.TickRateMultiplierType tickRateMultiplierType = TimeTickSystem.TickRateMultiplierType.BaseInterval;
 
         [SerializeField]
         [ColorUsage(false)]

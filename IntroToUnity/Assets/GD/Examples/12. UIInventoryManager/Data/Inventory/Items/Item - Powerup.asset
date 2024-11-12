@@ -16,6 +16,6 @@ MonoBehaviour:
   description: 
   itemCategory: 3
   itemType: 23
-  uiIcon: {fileID: 21300000, guid: e32b8056f5f2eb741bec42f791c7f1b5, type: 3}
+  uiIcon: {fileID: 21300000, guid: e128b01dab70e7a498a78577123c2db0, type: 3}
   audioClip: {fileID: 8300000, guid: 7478151cf36724a7dada558f746c3633, type: 3}
   audioPosition: {x: 0, y: 0, z: 0}

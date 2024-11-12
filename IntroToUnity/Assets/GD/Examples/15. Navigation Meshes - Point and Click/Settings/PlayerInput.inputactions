@@ -1,0 +1,54 @@
+{
+    "name": "PlayerInput",
+    "maps": [
+        {
+            "name": "StandardControls",
+            "id": "613084be-a4c7-4ec9-a6d8-973e04fd8f15",
+            "actions": [
+                {
+                    "name": "SelectPlayer",
+                    "type": "Button",
+                    "id": "9c780306-f442-4cc0-b66a-1f55d2338b01",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap,SlowTap",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectWaypoint",
+                    "type": "Button",
+                    "id": "fb425ce8-77e3-4c71-a13e-32e41dc0b491",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap,SlowTap",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "105aab3b-3035-43f3-ab7d-514d605808ae",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectPlayer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8aa88eb7-183b-4d8c-8077-7ef8dafe0e3c",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectWaypoint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

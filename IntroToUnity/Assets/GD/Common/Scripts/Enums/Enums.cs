@@ -1,6 +1,24 @@
 ﻿namespace GD.Types
 {
     /// <summary>
+    /// Represents the state of a UI element, such as visible, hidden, or transitioning.
+    /// </summary>
+    public enum VisibilityState
+    {
+        [Description("The UI element is visible.")]
+        Visible,
+
+        [Description("The UI element is transitioning to a visible state.")]
+        Showing,
+
+        [Description("The UI element is transitioning to a hidden state.")]
+        Hiding,
+
+        [Description("The UI element is hidden.")]
+        Hidden
+    }
+
+    /// <summary>
     /// Used in the StateManager to determine how to evaluate a condition.
     /// </summary>
     public enum ConditionType

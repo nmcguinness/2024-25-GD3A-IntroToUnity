@@ -76,7 +76,7 @@ namespace GD.UI
         /// </summary>
         /// We could solve the update problem with
         /// 1. Update
-        /// 2. HandleTicks
+        /// 2. HandleTicks (i.e, 0.1, 0.2, 0.4, 0.8)
         /// 3. Persistent polling ("have you changed?")
         /// 4. Event-driven ("I'll tell you when I change")
         public void OnInventoryChange()

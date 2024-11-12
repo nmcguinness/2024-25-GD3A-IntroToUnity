@@ -21,6 +21,6 @@ public class InventoryEquippableCondition : ConditionBase
         var inventory = conditionContext.inventoryCollection.Get(itemCategoryType);
 
         // Check if the inventory contains the required number of stones
-        return itemCount <= inventory.Count(itemData); ;
+        return itemCount <= inventory.Count(itemData);
     }
 }

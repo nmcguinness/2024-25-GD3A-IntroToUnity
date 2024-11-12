@@ -21,10 +21,10 @@ namespace GD.Tick
         // Enum representing different tick rate multipliers.
         public enum TickRateMultiplierType : sbyte
         {
-            RealTime = 1,    // Fires every tick (base rate)
-            HalfTime = 2,    // Fires every 2 ticks
-            QuarterTime = 4, // Fires every 4 ticks
-            EighthTime = 8   // Fires every 8 ticks
+            BaseInterval = 1,    // Fires every tick (base rate)
+            HalfBaseInterval = 2,    // Fires every 2 ticks
+            QuarterBaseInterval = 4, // Fires every 4 ticks
+            EightBaseInterval = 8   // Fires every 8 ticks (8 x 0.03 = 0.24 ~ typical human perception
         }
 
         // The current tick count, starting from zero.
@@ -49,10 +49,10 @@ namespace GD.Tick
             // Initialize the dictionary to hold UnityEvents for each tick rate multiplier.
             tickEvents = new Dictionary<TickRateMultiplierType, UnityEvent>
             {
-                { TickRateMultiplierType.RealTime, new UnityEvent() },
-                { TickRateMultiplierType.HalfTime, new UnityEvent() },
-                { TickRateMultiplierType.QuarterTime, new UnityEvent() },
-                { TickRateMultiplierType.EighthTime, new UnityEvent() }
+                { TickRateMultiplierType.BaseInterval, new UnityEvent() },
+                { TickRateMultiplierType.HalfBaseInterval, new UnityEvent() },
+                { TickRateMultiplierType.QuarterBaseInterval, new UnityEvent() },
+                { TickRateMultiplierType.EightBaseInterval, new UnityEvent() }
             };
         }
 
@@ -69,19 +69,19 @@ namespace GD.Tick
                 Tick++; // Increment the tick count.
 
                 // Invoke tick events based on the tick rate multipliers.
-                tickEvents[TickRateMultiplierType.RealTime]?.Invoke();
+                tickEvents[TickRateMultiplierType.BaseInterval]?.Invoke();
 
-                if (Tick % (int)TickRateMultiplierType.HalfTime == 0)
+                if (Tick % (int)TickRateMultiplierType.HalfBaseInterval == 0)
                 {
-                    tickEvents[TickRateMultiplierType.HalfTime]?.Invoke();
+                    tickEvents[TickRateMultiplierType.HalfBaseInterval]?.Invoke();
 
-                    if (Tick % (int)TickRateMultiplierType.QuarterTime == 0)
+                    if (Tick % (int)TickRateMultiplierType.QuarterBaseInterval == 0)
                     {
-                        tickEvents[TickRateMultiplierType.QuarterTime]?.Invoke();
+                        tickEvents[TickRateMultiplierType.QuarterBaseInterval]?.Invoke();
 
-                        if (Tick % (int)TickRateMultiplierType.EighthTime == 0)
+                        if (Tick % (int)TickRateMultiplierType.EightBaseInterval == 0)
                         {
-                            tickEvents[TickRateMultiplierType.EighthTime]?.Invoke();
+                            tickEvents[TickRateMultiplierType.EightBaseInterval]?.Invoke();
                         }
                     }
                 }
