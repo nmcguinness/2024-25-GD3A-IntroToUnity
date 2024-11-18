@@ -1304,15 +1304,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68480c2f5137e0e4199798dd3573abbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tickRateType: 2
+  resetAllConditionsOnStart: 1
   player: {fileID: 1826292383}
   inventoryCollection: {fileID: 11400000, guid: 1c625224b76d75a418598629203a56c4,
     type: 2}
-  resetConditionsOnStart: 1
   winCondition: {fileID: 11400000, guid: 7037132748aa3584488e13f6b7eca435, type: 2}
   loseCondition: {fileID: 11400000, guid: f5d96a2097d38de47a160fb176c449de, type: 2}
   achievementConditions:
   - {fileID: 11400000, guid: 7299c5bee1b58644eaad1ec5f28379d6, type: 2}
-  tickRateType: 2
 --- !u!1001 &1402827283
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -20,11 +20,15 @@ namespace GD.Tweens
 
         protected override void InitializePanel()
         {
+            base.InitializePanel();
+
             panel.localScale = hiddenScale;
         }
 
         protected override void Show()
         {
+            base.Show();
+
             panel.DOScale(targetScale, DurationSecs)
                 .SetEase(ShowEase)
                 .SetDelay(DelaySecs)
@@ -33,6 +37,8 @@ namespace GD.Tweens
 
         protected override void Hide()
         {
+            base.Hide();
+
             panel.DOScale(hiddenScale, DurationSecs)
                 .SetEase(HideEase)
                 .SetDelay(DelaySecs)

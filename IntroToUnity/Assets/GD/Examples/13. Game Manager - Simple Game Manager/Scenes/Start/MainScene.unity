@@ -1390,7 +1390,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 173626072}
         m_TargetAssemblyTypeName: SimpleGameManager, Assembly-CSharp
-        m_MethodName: EndGame
+        m_MethodName: LoseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1419,7 +1419,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 173626072}
         m_TargetAssemblyTypeName: SimpleGameManager, Assembly-CSharp
-        m_MethodName: RestartGame
+        m_MethodName: WinGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1717,7 +1717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1516273090
 Transform:
   m_ObjectHideFlags: 0
@@ -1748,7 +1748,8 @@ MonoBehaviour:
   tickRateType: 1
   resetAllConditionsOnStart: 1
   player: {fileID: 0}
-  inventoryCollection: {fileID: 0}
+  inventoryCollection: {fileID: 11400000, guid: 1c625224b76d75a418598629203a56c4,
+    type: 2}
   winCondition: {fileID: 11400000, guid: 7037132748aa3584488e13f6b7eca435, type: 2}
   loseCondition: {fileID: 11400000, guid: f5d96a2097d38de47a160fb176c449de, type: 2}
   achievementConditions: []
