@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using GD.Events;
 
-namespace GD.UI
+namespace GD.Toast
 {
     public class CountdownToastBehaviour : MonoBehaviour
     {

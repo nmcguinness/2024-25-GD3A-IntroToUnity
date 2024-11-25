@@ -25,15 +25,17 @@ public class CoroutineWaypointDemo : MonoBehaviour
 
     private void Start()
     {
-        if (waypoints.Length > 0)
-        {
-            // Start the coroutine for moving between waypoints
-            StartCoroutine(MoveBetweenWaypoints());
-        }
-        else
-        {
-            Debug.LogError("No waypoints assigned!");
-        }
+        //if (waypoints.Length > 0)
+        //{
+        //    // Start the coroutine for moving between waypoints
+        //    StartCoroutine(MoveBetweenWaypoints());
+        //}
+        //else
+        //{
+        //    Debug.LogError("No waypoints assigned!");
+        //}
+
+        MoveBetweenWaypoints();
     }
 
     private IEnumerator MoveBetweenWaypoints()
