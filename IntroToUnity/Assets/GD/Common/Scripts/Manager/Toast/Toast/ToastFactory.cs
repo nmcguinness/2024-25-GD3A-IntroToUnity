@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 namespace GD.Toast
@@ -20,7 +19,7 @@ namespace GD.Toast
         /// <summary>
         /// Creates a toast object.
         /// </summary>
-        public GameObject CreateToast(string message)
+        public GameObject GetToast(string message)
         {
             GameObject toastObject = Object.Instantiate(toastPrefab, parentTransform);
             ToastDisplay display = toastObject.GetComponent<ToastDisplay>();

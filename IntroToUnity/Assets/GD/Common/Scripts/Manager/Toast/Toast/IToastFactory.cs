@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 namespace GD.Toast
@@ -8,6 +7,6 @@ namespace GD.Toast
     /// </summary>
     public interface IToastFactory
     {
-        GameObject CreateToast(string message);
+        GameObject GetToast(string message);
     }
 }

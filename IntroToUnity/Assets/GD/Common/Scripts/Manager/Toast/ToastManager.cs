@@ -26,17 +26,25 @@ namespace GD.Toast
         /// <summary>
         /// Adds a new toast to the queue.
         /// </summary>
-        public void ShowToast(Toast toast)
+        public void AddToast(string message, float duration, float delay)
+        {
+            AddToast(new Toast(message, duration, delay));
+        }
+
+        /// <summary>
+        /// Adds a new toast to the queue.
+        /// </summary>
+        public void AddToast(Toast toast)
         {
             toastQueue.Enqueue(toast);
 
             if (!isProcessing)
             {
-                StartCoroutine(ProcessToastQueue());
+                StartCoroutine(ProcessQueue());
             }
         }
 
-        private IEnumerator ProcessToastQueue()
+        private IEnumerator ProcessQueue()
         {
             isProcessing = true;
 
@@ -48,7 +56,7 @@ namespace GD.Toast
                 yield return new WaitForSeconds(toast.Delay);
 
                 // Create and show toast
-                GameObject toastObject = toastFactory.CreateToast(toast.Message);
+                GameObject toastObject = toastFactory.GetToast(toast.Message);
                 ToastDisplay display = toastObject.GetComponent<ToastDisplay>();
                 display.Show();
 

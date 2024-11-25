@@ -14,6 +14,6 @@ public class PlayerRankCondition : ConditionBase
         // return PlayerSingleton.rank >= rankThreshold;
 
         // dependency injection - GOOD!!!!
-        return conditionContext.player.rank >= rankThreshold;
+        return conditionContext.Player.rank >= rankThreshold;
     }
 }

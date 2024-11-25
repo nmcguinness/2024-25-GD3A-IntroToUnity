@@ -9,6 +9,6 @@ public class PlayerHealthCondition : ConditionBase
 
     protected override bool EvaluateCondition(ConditionContext conditionContext)
     {
-        return conditionContext.player.health < healthThreshold;
+        return conditionContext.Player.health < healthThreshold;
     }
 }
