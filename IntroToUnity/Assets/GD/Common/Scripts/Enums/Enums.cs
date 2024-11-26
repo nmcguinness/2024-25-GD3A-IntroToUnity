@@ -1,9 +1,36 @@
 ﻿namespace GD.Types
 {
     /// <summary>
+    /// Represents the various types of audio groups in the game.
+    /// </summary>
+    public enum AudioMixerGroupName : sbyte
+    {
+        [Description("Master audio group")]
+        Master,
+
+        [Description("Ambient sounds group")]
+        Ambient,
+
+        [Description("Background music group")]
+        Background,
+
+        [Description("Sound effects group")]
+        SFX,
+
+        [Description("UI sounds group")]
+        UI,
+
+        [Description("Voiceover group")]
+        Voiceover,
+
+        [Description("Weapon sounds group")]
+        Weapon
+    }
+
+    /// <summary>
     /// Represents the state of a UI element, such as visible, hidden, or transitioning.
     /// </summary>
-    public enum VisibilityState
+    public enum VisibilityState : sbyte
     {
         [Description("The UI element has tween applied.")]
         End,
@@ -21,7 +48,7 @@
     /// <summary>
     /// Used in the StateManager to determine how to evaluate a condition.
     /// </summary>
-    public enum ConditionType
+    public enum ConditionType : sbyte
     {
         [Description("Evaluate all conditions and return true if all are met.")]
         And,
@@ -36,7 +63,7 @@
     /// <summary>
     /// Used in the StateManager to determine how to evaluate a condition.
     /// </summary>
-    public enum EvaluateStrategy
+    public enum EvaluateStrategy : sbyte
     {
         /// <summary>
         /// Always evaluate the condition, regardless of whether it is met.
@@ -78,7 +105,7 @@
     /// </summary>
     /// <see cref="GD.Items.ItemData"/>
     /// <see cref="GD.Inventory"/>
-    public enum ItemCategoryType
+    public enum ItemCategoryType : sbyte
     {
         /// <summary>
         /// Items that restore health, provide armor, or give temporary boosts.
@@ -147,7 +174,7 @@
     /// </summary>
     /// <see cref="GD.Items.ItemData"/>
     /// <see cref="GD.Inventory"/>
-    public enum ItemType
+    public enum ItemType : sbyte
     {
         // Consumable Types
         /// <summary>
@@ -326,53 +353,4 @@
         [Description("Special weapon such as a rocket launcher or sniper rifle")]
         SpecialWeapon
     }
-
-    /// <summary>
-    /// The type of interactable object.
-    /// </summary>
-    /// <see cref="ItemData"/>
-    //public enum ItemType
-    //{
-    //    [Description("Non-playable character")]
-    //    NPC,
-
-    //    [Description("A door that can be opened or closed")]
-    //    Door,
-
-    //    [Description("A container such as a chest or bag")]
-    //    Container,
-
-    //    [Description("An object that triggers or advances a quest")]
-    //    Quest,
-
-    //    [Description("A sign that displays information")]
-    //    Sign,
-
-    //    [Description("Furniture item like a chair or table")]
-    //    Furniture,
-
-    //    [Description("A weapon that can be equipped by the player")]
-    //    Weapon,
-
-    //    [Description("Armor that provides protection to the player")]
-    //    Armor,
-
-    //    [Description("Consumable item like food or potions")]
-    //    Consumable,
-
-    //    [Description("A key that can unlock doors or chests")]
-    //    Key,
-
-    //    [Description("A tool used for crafting or interacting with the environment")]
-    //    Tool,
-
-    //    [Description("A resource item such as wood or stone")]
-    //    Resource,
-
-    //    [Description("Currency used for trading or purchasing items")]
-    //    Currency,
-
-    //    [Description("Ammo used for weapons")]
-    //    Ammo
-    //}
 }

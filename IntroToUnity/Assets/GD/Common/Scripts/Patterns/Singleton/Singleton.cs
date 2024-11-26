@@ -22,7 +22,7 @@ namespace GD
         {
             get
             {
-                instance = FindObjectOfType<T>();
+                instance = FindFirstObjectByType<T>();
                 if (instance != null)
                 {
                     return instance;
@@ -36,6 +36,25 @@ namespace GD
                 }
                 return instance;
             }
+        }
+
+        protected virtual void Awake()
+        {
+            // Ensure only one instance exists
+            if (Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            // Ensure the GameObject is at the root of the hierarchy
+            if (transform.parent != null)
+            {
+                transform.SetParent(null); // Detach from any parent
+            }
+
+            // Optionally, keep this object across scenes
+            DontDestroyOnLoad(gameObject);
         }
 
         private void OnDestroy()
