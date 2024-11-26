@@ -23,12 +23,14 @@ public class CoroutineWaypointDemo : MonoBehaviour
     [Tooltip("The current waypoint index the object is moving towards.")]
     private int currentWaypointIndex = 0; // Exposed for runtime debugging only
 
+    private Coroutine runningCoroutine;
+
     private void Start()
     {
         if (waypoints.Length > 0)
         {
             // Start the coroutine for moving between waypoints
-            StartCoroutine(MoveBetweenWaypoints());
+            runningCoroutine = StartCoroutine(MoveBetweenWaypoints());
         }
         else
         {
@@ -60,5 +62,12 @@ public class CoroutineWaypointDemo : MonoBehaviour
             // Move to the next waypoint (loop back to the start if necessary)
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         }
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+
+        //StopCoroutine(runningCoroutine);
     }
 }

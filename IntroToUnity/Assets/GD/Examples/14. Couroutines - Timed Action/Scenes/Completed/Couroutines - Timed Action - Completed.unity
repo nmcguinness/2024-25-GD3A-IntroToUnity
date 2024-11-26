@@ -245,7 +245,7 @@ MonoBehaviour:
   - {fileID: 754439524}
   - {fileID: 372289281}
   speed: 5
-  delay: 0.25
+  delay: 1
 --- !u!1 &343801076
 GameObject:
   m_ObjectHideFlags: 0

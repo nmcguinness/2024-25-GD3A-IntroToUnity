@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23a564ec2489a04a89c0780663ddff3, type: 3}
   m_Name: TweenToastAnimator - Fade in, wait, out
   m_EditorClassIdentifier: 
-  fadeInDuration: 0.25
-  fadeOutDuration: 0.25
+  fadeInDuration: 0.5
+  fadeOutDuration: 0.5

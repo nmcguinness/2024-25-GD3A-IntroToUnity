@@ -1,4 +1,6 @@
-﻿using GD.Toast;
+﻿using GD.Audio;
+using GD.Toast;
+using GD.Types;
 using UnityEngine;
 
 public class TestToastManager : MonoBehaviour
@@ -6,7 +8,7 @@ public class TestToastManager : MonoBehaviour
     private void Start()
     {
         // Test case: Display a single toast
-        ToastManager.Instance.AddToast("Ready!!!", 3, 0);
+        ToastManager.Instance.AddToast("Ready!!!", 3, 1);
 
         // Test case: Display multiple toasts in a queue
         ToastManager.Instance.AddToast("3...", 0.5f, 0);
@@ -15,6 +17,7 @@ public class TestToastManager : MonoBehaviour
 
         // Test case: Adding a toast with a delay before showing
         ToastManager.Instance.AddToast("Go!!!", 1, 0);
+        //  AudioManager.Instance.PlaySound(goAudioClip, AudioMixerGroupName.Voiceover);
     }
 
     private void Update()

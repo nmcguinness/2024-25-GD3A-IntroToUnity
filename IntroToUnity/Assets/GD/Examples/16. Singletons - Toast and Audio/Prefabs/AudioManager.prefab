@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2970980388080227247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4625968550193158404}
+  - component: {fileID: 7059776757748341749}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4625968550193158404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2970980388080227247}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7059776757748341749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2970980388080227247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d09f1b7e1dc5e4d870711fc1501815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSourcePrefab: {fileID: 3452120855292856524, guid: bda442d0597fad848bea1e06d8441447,
+    type: 3}
+  initialPoolSize: 16
+  audioMixer: {fileID: 24100000, guid: 1ef6f9c378c87144fa3087d3385ded91, type: 2}
+  masterGroup: {fileID: 24300002, guid: 1ef6f9c378c87144fa3087d3385ded91, type: 2}
+  ambientGroup: {fileID: 2259889797419706146, guid: 1ef6f9c378c87144fa3087d3385ded91,
+    type: 2}
+  backgroundGroup: {fileID: 6430635203521748997, guid: 1ef6f9c378c87144fa3087d3385ded91,
+    type: 2}
+  sfxGroup: {fileID: -993374168260805261, guid: 1ef6f9c378c87144fa3087d3385ded91,
+    type: 2}
+  uiGroup: {fileID: 1421767594225836869, guid: 1ef6f9c378c87144fa3087d3385ded91, type: 2}
+  voiceoverGroup: {fileID: 98740022395981796, guid: 1ef6f9c378c87144fa3087d3385ded91,
+    type: 2}
+  weaponGroup: {fileID: -6418907998923841536, guid: 1ef6f9c378c87144fa3087d3385ded91,
+    type: 2}

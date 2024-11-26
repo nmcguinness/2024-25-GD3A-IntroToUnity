@@ -50,6 +50,7 @@ namespace GD.Toast
         {
             toastQueue.Enqueue(new Toast(message, duration, delay));
 
+            // If we're not already processing the queue, start processing
             if (!isProcessing)
             {
                 StartCoroutine(ProcessQueue());

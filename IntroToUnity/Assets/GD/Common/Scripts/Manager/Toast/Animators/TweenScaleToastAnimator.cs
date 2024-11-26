@@ -26,6 +26,8 @@ namespace GD.Toast
             // Create a sequence animation with DoTween
             toastSequence = DOTween.Sequence()
                 .Append(toastUI.transform.DOScale(targetScale, duration))
+                // .AppendInterval(2)
+                // .Append(toastUI.transform.DOScale(Vector3.one, duration/2))
                 .OnComplete(() => onComplete?.Invoke());
         }
 

@@ -19,17 +19,17 @@ public class TestAudioManager : MonoBehaviour
     [SerializeField]
     private Transform sfxPosition;
 
-    [SerializeField]
-    [Range(-80, 0)]
-    private float masterVolume = 0f; // Volume in decibels (-80 to 0)
+    //[SerializeField]
+    //[Range(-80, 0)]
+    //private float masterVolume = 0f; // Volume in decibels (-80 to 0)
 
-    [SerializeField]
-    [Range(0, 1)]
-    private float sfxVolume = 0f;    // Volume in decibels (-80 to 0)
+    //[SerializeField]
+    //[Range(0, 1)]
+    //private float sfxVolume = 0f;    // Volume in decibels (-80 to 0)
 
-    [SerializeField]
-    [Range(0, 1)]
-    private float backgroundVolume = 0f; // Volume in decibels (-80 to 0)
+    //[SerializeField]
+    //[Range(0, 1)]
+    //private float backgroundVolume = 0f; // Volume in decibels (-80 to 0)
 
     private void Update()
     {
