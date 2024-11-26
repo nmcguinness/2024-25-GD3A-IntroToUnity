@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8321284632426649215
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.7465456
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.0815458
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1368312
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[0].size
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[0].text
+      value: 'Example: Using Singleton class to create AudioManager and ToastManager'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[1].size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[1].text
+      value: '- Usage: Audio [A, S, B keys]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[2].size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[2].text
+      value: '- Keywords:  Singleton, DoTween, Coroutine'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[0].dimensions.x
+      value: 434.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[0].dimensions.y
+      value: 14.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[1].dimensions.x
+      value: 166.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[1].dimensions.y
+      value: 14.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[2].dimensions.x
+      value: 255.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[2].dimensions.y
+      value: 14.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577621736917375309, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_Name
+      value: Example Info Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2001136ed464dbc4aa058efd8a378861, type: 3}
